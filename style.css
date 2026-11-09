@@ -131,10 +131,10 @@ nav ul li a:hover {
     gap: 25px;
     flex-wrap: wrap;
 }
-
 .service-card {
-    background: #151515;
-    border: 1px solid #333;
+    background: linear-gradient(145deg, #181818, #080808);
+    border: 1px solid #555;
+    border-radius: 8px;
     padding: 40px 25px;
     width: 280px;
     transition: 0.3s;
