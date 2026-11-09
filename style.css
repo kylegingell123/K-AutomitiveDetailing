@@ -1,0 +1,260 @@
+/* MAIN SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: black
+
+
+
+
+    ;
+    color: white;
+    font-family: georgia
+
+
+
+}
+
+/* NAVIGATION BAR */
+
+header {
+    background: #111;
+    padding: 25px 7%;
+    border-bottom: 1px solid silver
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: silver;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: silver;
+}
+
+/* HOMEPAGE */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px;
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600") center/cover;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: silver;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* BOOKING BUTTON */
+
+.button {
+    background-color: #C0C0C0;
+    color: #000000;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* SERVICES */
+
+.services {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.services h2,
+.about h2 {
+    color: silver;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #151515;
+    border: 1px solid #333;
+    padding: 40px 25px;
+    width: 280px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color:silver;
+    transform: translateY(-8px);
+}
+
+.service-card h3 {
+    color: silver;
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+/* ABOUT */
+
+.about {
+    background: #111;
+    padding: 90px 15%;
+    text-align: center;
+}
+
+.about p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    color: silver;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    color: #888;
+}
+
+/* MOBILE FRIENDLY */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+}.services {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    color: #C0C0C0;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #181818;
+    border: 1px solid #555;
+    padding: 35px;
+    width: 250px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.service-card h3 {
+    color: #C0C0C0;
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    color: white;
+    line-height: 1.8;
+}
+
+.service-card:hover {
+    border-color: silver;
+    transform: translateY(-5px);
+}
