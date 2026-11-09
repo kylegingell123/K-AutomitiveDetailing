@@ -213,10 +213,12 @@ footer p {
     }
 
     .logo {
-        font-size: 14px;
-        letter-spacing: 0px;
-        text-align: center;
+        display: block;
         width: 100%;
+        max-width: 100%;
+        font-size: 14px;
+        letter-spacing: 0;
+        text-align: center;
         overflow-wrap: anywhere;
     }
 
