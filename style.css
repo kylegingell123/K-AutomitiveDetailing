@@ -196,7 +196,24 @@ footer p {
 
 /* MOBILE FRIENDLY */
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {header {
+    padding: 15px 10px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+nav a {
+    font-size: 13px;
+}
 
     nav {
         flex-direction: column;
