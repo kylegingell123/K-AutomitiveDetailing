@@ -147,7 +147,10 @@ nav ul li a:hover {
 
 .service-card h3 {
     color: silver;
+    font-size: 22px;
+    letter-spacing: 1px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .service-card p {
