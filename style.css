@@ -182,6 +182,7 @@ nav ul li a:hover {
     line-height: 1.9;
     max-width: 750px;
     margin: 0 auto 20px;
+    overflow-wrap: anywhere;
 }
 
 /* CONTACT */
