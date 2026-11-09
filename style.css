@@ -154,10 +154,11 @@ nav ul li a:hover {
 }
 
 .service-card p {
-    color: #bbb;
-    line-height: 1.6;
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
 }
-
 /* ABOUT */
 
 .about {
