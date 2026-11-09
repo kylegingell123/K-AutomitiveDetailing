@@ -176,17 +176,25 @@ nav ul li a:hover {
 }
 
 /* CONTACT */
-
 .contact {
-    padding: 90px 20px;
+    padding: 100px 20px;
     text-align: center;
+    background: #080808;
 }
 
 .contact h2 {
     color: silver;
+    font-size: 32px;
     margin-bottom: 25px;
 }
 
+.contact p {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
 /* FOOTER */
 
 footer {
