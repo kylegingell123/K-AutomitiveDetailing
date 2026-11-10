@@ -237,7 +237,6 @@ footer {
     color: #666;
 }
 
-/* MOBILE FRIENDLY */
 
 /* MOBILE FRIENDLY */
 
@@ -246,6 +245,12 @@ footer {
     header {
         width: 100%;
         padding: 20px 10px;
+    }
+
+    .logo img {
+        width: 180px;
+        height: auto;
+        margin: 0 auto;
     }
 
     nav {
@@ -323,5 +328,12 @@ footer {
         text-align: center;
         font-size: 16px;
     }
+}
 
+/* LOGO IMAGE */
+
+.logo img {
+    width: 220px;
+    height: auto;
+    display: block;
 }
