@@ -418,4 +418,55 @@ footer {
         grid-column: span 1;
     }
 
+}/* BOOKING FORM - MOBILE FIX */
+
+@media (max-width: 768px) {
+
+    .booking {
+        padding: 55px 18px;
+        width: 100%;
+    }
+
+    .booking h2 {
+        font-size: 27px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .booking p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    #booking-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        gap: 18px;
+        margin: auto;
+    }
+
+    #booking-form input,
+    #booking-form select,
+    #booking-form textarea {
+        width: 100%;
+        min-width: 0;
+        padding: 15px;
+        font-size: 16px;
+        min-height: 52px;
+    }
+
+    #booking-form textarea {
+        min-height: 110px;
+    }
+
+    #booking-form button {
+        width: 100%;
+        padding: 17px 10px;
+        font-size: 13px;
+    }
+
 }
