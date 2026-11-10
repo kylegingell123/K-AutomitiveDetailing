@@ -469,4 +469,12 @@ footer {
         font-size: 13px;
     }
 
+}/* BOOKING CONFIRMATION */
+
+#booking-status {
+    color: silver;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 15px;
+    text-align: center;
 }
