@@ -336,4 +336,49 @@ footer {
     width: 220px;
     height: auto;
     display: block;
+}/* BOOKING SECTION */
+
+.booking {
+    background: #111;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.booking h2 {
+    color: silver;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.booking p {
+    color: #ccc;
+    margin-bottom: 35px;
+}
+
+#booking-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea {
+    padding: 15px;
+    background: #080808;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+#booking-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#booking-form button {
+    cursor: pointer;
 }
