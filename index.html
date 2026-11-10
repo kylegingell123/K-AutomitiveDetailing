@@ -169,14 +169,15 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     const message = document.getElementById("message").value;
 
     const bookingMessage =
-        "Hi, I'd like to request a car detailing booking.%0A%0A" +
-        "Name: " + name + "%0A" +
-        "Vehicle: " + vehicle + "%0A" +
-        "Service: " + service + "%0A" +
-        "Preferred Date: " + date + "%0A" +
-        "Preferred Time: " + time + "%0A" +
-        "Additional Information: " + message;
+    "Hi, I'd like to request a car detailing booking.\n\n" +
+    "Name: " + name + "\n" +
+    "Vehicle: " + vehicle + "\n" +
+    "Service: " + service + "\n" +
+    "Preferred Date: " + date + "\n" +
+    "Preferred Time: " + time + "\n" +
+    "Additional Information: " + message;
 
+ 
     const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
 
     window.open(whatsappURL, "_blank");
