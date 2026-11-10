@@ -88,6 +88,44 @@
 </section>
 
     <!-- CONTACT -->
+     <!-- BOOKING SECTION -->
+
+<section class="booking" id="booking">
+
+    <h2>BOOK YOUR DETAIL</h2>
+
+    <p>Request your appointment with K.AutomotiveDetailing.</p>
+
+    <form id="booking-form">
+
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <input type="text" id="vehicle" placeholder="Vehicle Make & Model" required>
+
+        <select id="service" required>
+            <option value="">Choose a Service</option>
+            <option>Interior Detailing</option>
+            <option>Exterior Detailing</option>
+            <option>Full Detailing</option>
+        </select>
+
+        <input type="date" id="date" required>
+
+        <select id="time" required>
+            <option value="">Preferred Time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+        </select>
+
+        <textarea id="message" placeholder="Additional Information"></textarea>
+
+        <button type="submit" class="button">SEND BOOKING REQUEST</button>
+
+    </form>
+
+</section>
+
     <section class="contact" id="contact">
     <h2>READY TO TRANSFORM YOUR VEHICLE?</h2>
 
@@ -117,6 +155,34 @@
         </p>
     </div>
 </footer>
+<script>
 
+document.getElementById("booking-form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const vehicle = document.getElementById("vehicle").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const message = document.getElementById("message").value;
+
+    const bookingMessage =
+        "Hi, I'd like to request a car detailing booking.%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Vehicle: " + vehicle + "%0A" +
+        "Service: " + service + "%0A" +
+        "Preferred Date: " + date + "%0A" +
+        "Preferred Time: " + time + "%0A" +
+        "Additional Information: " + message;
+
+    const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+</script>
 </body>
 </html>
