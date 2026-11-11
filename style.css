@@ -670,4 +670,88 @@ footer {
     .payment h2 {
         font-size: 26px;
     }
+}/* CUSTOMER REVIEWS SECTION */
+
+.reviews {
+    background: #080808;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.reviews h2 {
+    color: silver;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.reviews-intro {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+.reviews-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background: #151515;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 35px 25px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 340px;
+}
+
+.review-stars {
+    color: silver;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.review-card h3 {
+    color: silver;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* MOBILE REVIEWS */
+
+@media (max-width: 768px) {
+    .reviews {
+        padding: 60px 18px;
+    }
+
+    .reviews h2 {
+        font-size: 27px;
+    }
+
+    .reviews-intro {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        width: 100%;
+        max-width: 400px;
+    }
 }
