@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,7 +159,15 @@
     </div>
 </footer>
 <script>
+const dateInput = document.getElementById("date");
 
+const today = new Date();
+const localDate = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+
+dateInput.min = localDate;
 document.getElementById("booking-form").addEventListener("submit", function(event) {
 
     event.preventDefault();
