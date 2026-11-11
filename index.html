@@ -168,6 +168,7 @@ const localDate = new Date(
 
 
 dateInput.min = localDate;
+console.log("Minimum booking date:", dateInput.min);
 document.getElementById("booking-form").addEventListener("submit", function(event) {
 
     event.preventDefault();
