@@ -168,6 +168,14 @@ const localDate = new Date(
 
 
 dateInput.min = localDate;
+const maxDate = new Date();
+maxDate.setDate(maxDate.getDate() + 90);
+
+const maxLocalDate = new Date(
+    maxDate.getTime() - maxDate.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+dateInput.max = maxLocalDate;
 console.log("Minimum booking date:", dateInput.min);
 document.getElementById("booking-form").addEventListener("submit", function(event) {
 
