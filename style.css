@@ -754,4 +754,15 @@ footer {
         width: 100%;
         max-width: 400px;
     }
+}/* GOOGLE REVIEW BUTTON */
+
+.google-review-button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.google-review-button .button {
+    padding: 18px 35px;
+    font-size: 15px;
+    letter-spacing: 2px;
 }
