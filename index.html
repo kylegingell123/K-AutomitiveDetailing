@@ -75,7 +75,78 @@
         </div>
 
     </section>
+<!-- PRICING SECTION -->
 
+<section class="pricing" id="pricing">
+
+    <h2>OUR PRICING</h2>
+
+    <p class="pricing-intro">
+        Professional mobile detailing at competitive prices.
+    </p>
+
+    <div class="pricing-container">
+
+        <div class="pricing-card">
+            <h3>INTERIOR DETAILING</h3>
+            <h4>£50</h4>
+
+            <ul>
+                <li>Full interior vacuum</li>
+                <li>Seats and carpets cleaned</li>
+                <li>Dashboard and console cleaned</li>
+                <li>Door panels and pockets cleaned</li>
+                <li>Cup holders and storage areas cleaned</li>
+                <li>Interior windows cleaned</li>
+                <li>Floor mats cleaned</li>
+            </ul>
+
+            <a href="#booking" class="button">BOOK NOW</a>
+        </div>
+
+        <div class="pricing-card">
+            <h3>EXTERIOR DETAILING</h3>
+            <h4>£45</h4>
+
+            <ul>
+                <li>Exterior pre-wash</li>
+                <li>Wheel and tyre cleaning</li>
+                <li>Safe hand wash</li>
+                <li>Door shuts cleaned</li>
+                <li>Exterior windows cleaned</li>
+                <li>Microfibre towel drying</li>
+                <li>Tyre dressing</li>
+            </ul>
+
+            <a href="#booking" class="button">BOOK NOW</a>
+        </div>
+
+        <div class="pricing-card popular">
+            <span class="popular-label">MOST POPULAR</span>
+
+            <h3>FULL DETAILING</h3>
+            <h4>£85</h4>
+
+            <ul>
+                <li>Everything in Interior Detailing</li>
+                <li>Everything in Exterior Detailing</li>
+                <li>Complete interior refresh</li>
+                <li>Complete exterior wash</li>
+                <li>Interior and exterior glass</li>
+                <li>Full vehicle inspection</li>
+            </ul>
+
+            <a href="#booking" class="button">BOOK NOW</a>
+        </div>
+
+    </div>
+
+    <p class="pricing-note">
+        Prices are starting prices. Larger vehicles and heavily soiled
+        vehicles may require an additional charge.
+    </p>
+
+</section>
     <!-- ABOUT -->
     <section class="about" id="about">
     <h2>ABOUT<br>K.AUTOMOTIVEDETAILING</h2>
@@ -102,6 +173,7 @@
     <form id="booking-form">
 
         <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="registration" placeholder="Vehicle Registration" required>
 
         <input type="text" id="vehicle" placeholder="Vehicle Make & Model" required>
 
@@ -181,18 +253,24 @@ console.log("Minimum booking date:", dateInput.min);
 document.getElementById("booking-form").addEventListener("submit", function(event) {
 
     event.preventDefault();
+    const bookingReference = "KAD-" +
+    Date.now().toString().slice(-6) + "-" +
+    Math.floor(100 + Math.random() * 900);
 
     const name = document.getElementById("name").value;
     const vehicle = document.getElementById("vehicle").value;
+    const registration = document.getElementById("registration").value;
     const service = document.getElementById("service").value;
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
     const message = document.getElementById("message").value;
 
     const bookingMessage =
-        "Hi, I'd like to request a car detailing booking.\n\n" +
+    "Hi, I'd like to request a car detailing booking.\n\n" +
+    "Booking Reference: " + bookingReference + "\n" +
         "Name: " + name + "\n" +
         "Vehicle: " + vehicle + "\n" +
+        "Registration: " + registration + "\n" +
         "Service: " + service + "\n" +
         "Preferred Date: " + date + "\n" +
         "Preferred Time: " + time + "\n" +
@@ -201,7 +279,8 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
 
     document.getElementById("booking-status").textContent =
-        "Your booking request is ready! Please send the WhatsApp message to complete your enquiry. Your appointment is not confirmed until we reply.";
+    "Your booking reference is " + bookingReference +
+    ". Please send the WhatsApp message to complete your enquiry. Your appointment is not confirmed until we reply.";
 
     window.open(whatsappURL, "_blank");
 });
