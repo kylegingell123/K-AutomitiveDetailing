@@ -611,4 +611,63 @@ footer {
     .pricing-note {
         line-height: 1.6;
     }
+}/* PAYMENT SECTION */
+
+.payment {
+    background: #111;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.payment h2 {
+    color: silver;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.payment > p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.payment-card {
+    background: #080808;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1;
+}
+
+.payment-card h3 {
+    color: silver;
+    margin-bottom: 15px;
+}
+
+.payment-card p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.payment-note {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .payment-methods {
+        flex-direction: column;
+    }
+
+    .payment h2 {
+        font-size: 26px;
+    }
 }
