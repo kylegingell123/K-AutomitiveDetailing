@@ -477,4 +477,138 @@ footer {
     line-height: 1.7;
     margin-top: 15px;
     text-align: center;
+}/* PRICING SECTION */
+
+.pricing {
+    background: #080808;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.pricing h2 {
+    color: silver;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.pricing-intro {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 55px;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.pricing-card {
+    background: #151515;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 40px 25px;
+    flex: 1;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card h3 {
+    color: silver;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.pricing-card h4 {
+    color: white;
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 30px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.pricing-card li {
+    color: #ccc;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.pricing-card li::before {
+    content: "✓";
+    color: silver;
+    margin-right: 10px;
+}
+
+.pricing-card .button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pricing-card.popular {
+    border: 2px solid silver;
+    transform: scale(1.04);
+}
+
+.popular-label {
+    color: silver;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.pricing-note {
+    color: #999;
+    font-size: 14px;
+    margin-top: 40px;
+}/* PRICING MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .pricing {
+        padding: 60px 18px;
+    }
+
+    .pricing h2 {
+        font-size: 28px;
+    }
+
+    .pricing-intro {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 30px 22px;
+    }
+
+    .pricing-card.popular {
+        transform: none;
+    }
+
+    .pricing-card h4 {
+        font-size: 36px;
+    }
+
+    .pricing-note {
+        line-height: 1.6;
+    }
 }
