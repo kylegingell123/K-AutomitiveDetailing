@@ -830,4 +830,33 @@ footer {
     to {
         text-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
     }
+}/* BACK TO TOP BUTTON */
+
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid silver;
+    border-radius: 50%;
+    background: #151515;
+    color: silver;
+    font-size: 26px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: silver;
+    color: black;
+    transform: translateY(-5px);
 }
