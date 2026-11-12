@@ -248,9 +248,9 @@
 
 <section class="booking" id="booking">
 
-    <h2>BOOK YOUR DETAIL</h2>
+    <h2>MAKE AN ENQUIRY</h2>
 
-    <p>Request your appointment with K.AutomotiveDetailing.</p>
+   <p>Interested in our detailing services? Send us an enquiry and we'll be happy to discuss your requirements.</p>
 
     <form id="booking-form">
 
@@ -277,7 +277,7 @@
 
         <textarea id="message" placeholder="Additional Information"></textarea>
 
-        <button type="submit" class="button">SEND BOOKING REQUEST</button>
+        <button type="submit" class="button">SEND ENQUIRY</button>
         <p id="booking-status"></p>
 
     </form>
@@ -365,8 +365,8 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
 
     document.getElementById("booking-status").textContent =
-    "Your booking reference is " + bookingReference +
-    ". Please send the WhatsApp message to complete your enquiry. Your appointment is not confirmed until we reply.";
+"Your enquiry reference is " + bookingReference +
+". Please send the WhatsApp message to complete your enquiry. We will respond when we're ready to discuss your requirements.";
 
     window.open(whatsappURL, "_blank");
 });
