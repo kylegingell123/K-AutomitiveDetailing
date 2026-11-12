@@ -1,3 +1,4 @@
+
 /* MAIN SETTINGS */
 
 * {
@@ -85,26 +86,29 @@ nav ul li a:hover::after {
 /* HOMEPAGE */
 
 .hero {
-    min-height: 85vh;
+    min-height: 90vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px;
+    padding: 100px 20px;
+
     background:
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600") center/cover;
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
+        center/cover no-repeat;
 }
 
 .hero h1 {
-    font-size: 52px;
-    color: silver;
-    letter-spacing: 4px;
-    line-height: 1.2;
-    max-width: 900px;
+    font-size: 76px;
+    color: white;
+    letter-spacing: 5px;
+    line-height: 1.15;
+    max-width: 1000px;
     margin-bottom: 25px;
+    font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
 }
 
 .hero h2 {
