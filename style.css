@@ -860,3 +860,13 @@ footer {
     color: black;
     transform: translateY(-5px);
 }
+/* MOBILE BUTTON ADJUSTMENT */
+@media (max-width: 600px) {
+    #back-to-top {
+        width: 42px;
+        height: 42px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 22px;
+    }
+}
