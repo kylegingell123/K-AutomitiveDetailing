@@ -93,11 +93,15 @@ nav ul li a:hover::after {
     text-align: center;
     padding: 100px 20px;
 
-    background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
-        center/cover no-repeat;
-}
+background:
+    linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.75)
+    ),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
+    center/cover no-repeat;
 
 .hero h1 {
     font-size: 76px;
@@ -942,4 +946,72 @@ a:focus-visible {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+}/* MOBILE HERO ADJUSTMENTS */
+@media (max-width: 600px) {
+    .hero {
+        min-height: 80vh;
+        padding: 80px 18px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+        max-width: 280px;
+    }
+}/* MOBILE HERO SPACING */
+@media (max-width: 600px) {
+    .hero-line {
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+
+    .hero h2 {
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+}/* PREMIUM SERVICE CARD ACCENT */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, silver, transparent);
 }
