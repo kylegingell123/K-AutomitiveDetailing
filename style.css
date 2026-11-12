@@ -869,4 +869,9 @@ footer {
         right: 15px;
         font-size: 22px;
     }
+}/* KEYBOARD ACCESSIBILITY */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid silver;
+    outline-offset: 4px;
 }
