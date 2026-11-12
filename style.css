@@ -776,4 +776,21 @@ footer {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}/* PREMIUM CARD ANIMATIONS */
+
+.service-card,
+.pricing-card,
+.review-card,
+.payment-card {
+    transition: transform 0.35s ease, border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.service-card:hover,
+.pricing-card:hover,
+.review-card:hover,
+.payment-card:hover {
+    transform: translateY(-8px);
+    border-color: silver;
+    box-shadow: 0 8px 25px rgba(192, 192, 192, 0.12);
 }
