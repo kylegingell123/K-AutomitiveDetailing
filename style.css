@@ -765,4 +765,15 @@ footer {
     padding: 18px 35px;
     font-size: 15px;
     letter-spacing: 2px;
+}/* FADE IN ANIMATIONS */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
