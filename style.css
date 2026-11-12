@@ -777,8 +777,11 @@ footer {
 }/* GOOGLE REVIEW BUTTON */
 
 .google-review-button {
-    margin-top: 40px;
-    text-align: center;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
 }
 
 .google-review-button .button {
