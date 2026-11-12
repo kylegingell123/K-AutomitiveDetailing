@@ -112,20 +112,22 @@ nav ul li a:hover::after {
 }
 
 .hero h2 {
-    font-size: 25px;
+    font-size: 21px;
     font-weight: normal;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    letter-spacing: 5px;
+    color: silver;
+    margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
 .hero p {
-    color: #ddd;
+    color: #e0e0e0;
     font-size: 18px;
-    max-width: 600px;
-    line-height: 1.8;
-    margin-bottom: 35px;
+    max-width: 650px;
+    line-height: 1.9;
+    margin: 0 auto 40px;
+    letter-spacing: 0.5px;
 }
-
 /* BOOKING BUTTON */
 
 .button {
@@ -888,4 +890,56 @@ a:focus-visible {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+}/* HERO BUTTON LAYOUT */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .button {
+    min-width: 200px;
+    padding: 18px 28px;
+}
+
+/* SECONDARY HERO BUTTON */
+
+.secondary-button {
+    background: transparent;
+    color: white;
+    border: 1px solid silver;
+}
+
+.secondary-button:hover {
+    background: silver;
+    color: black;
+}/* HERO LABEL */
+
+.hero-label {
+    display: block;
+    color: silver;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+/* SILVER ACCENT LINE */
+
+.hero-line {
+    width: 65px;
+    height: 3px;
+    background: silver;
+    margin: 0 auto 25px;
+}/* HERO CONTENT WIDTH */
+
+.hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
