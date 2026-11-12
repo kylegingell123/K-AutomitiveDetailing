@@ -364,5 +364,26 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     window.open(whatsappURL, "_blank");
 });
 </script>
+<script>
+const animatedSections = document.querySelectorAll(
+    ".services, .pricing, .payment, .reviews, .about, .booking, .contact"
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in", "visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+animatedSections.forEach((section) => {
+    section.classList.add("fade-in");
+    observer.observe(section);
+});
+</script>
 </body>
 </html>
