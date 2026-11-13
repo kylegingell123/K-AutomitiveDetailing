@@ -437,6 +437,16 @@ const maxLocalDate = new Date(
 ).toISOString().split("T")[0];
 
 dateInput.max = maxLocalDate;
+// Block college days: Monday, Wednesday and Thursday
+dateInput.addEventListener("change", function() {
+    const selectedDate = new Date(this.value + "T12:00:00");
+    const day = selectedDate.getDay();
+
+    if ([1, 3, 4].includes(day)) {
+        alert("Sorry, enquiries are only available Tuesday, Friday, Saturday and Sunday.");
+        this.value = "";
+    }
+});
 console.log("Minimum booking date:", dateInput.min);
 document.getElementById("booking-form").addEventListener("submit", function(event) {
 
