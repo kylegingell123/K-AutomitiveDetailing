@@ -1163,6 +1163,7 @@ a:focus-visible {
     color: white;
     cursor: pointer;
     transition: 0.3s ease;
+    filter: brightness(0) invert(0.8);
 }
 
 .vehicle-card img {
