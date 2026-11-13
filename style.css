@@ -1157,7 +1157,7 @@ a:focus-visible {
 
 .vehicle-card {
     background: #1c1c1c;
-    border: 1px solid #777;
+    border: 1px solid transparent;
     border-radius: 8px;
     padding: 18px 10px;
     color: white;
@@ -1183,7 +1183,7 @@ a:focus-visible {
 .vehicle-card.selected {
     border-color: silver;
     background: #333;
-    box-shadow: 0 0 12px rgba(192, 192, 192, 0.25);
+    box-shadow: none;
     transform: translateY(-3px);
 }
 
