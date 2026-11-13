@@ -1303,4 +1303,22 @@ a:focus-visible {
     width: 100%;
     min-height: 42px;
     padding: 5px;
+}/* FIX CALENDAR BUTTON LAYOUT */
+#booking-calendar button {
+    grid-column: auto !important;
+    padding: 5px;
+}
+
+#booking-calendar .calendar-header button {
+    padding: 8px 12px;
+}
+
+#booking-calendar .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+#booking-calendar .calendar-date {
+    min-width: 0;
+    width: 100%;
 }
