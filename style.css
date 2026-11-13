@@ -1,4 +1,3 @@
-
 /* MAIN SETTINGS */
 
 * {
@@ -92,7 +91,8 @@ nav ul li a:hover::after {
     align-items: center;
     text-align: center;
     padding: 100px 20px;
-    background:
+
+background:
     linear-gradient(
         90deg,
         rgba(0, 0, 0, 0.85),
@@ -101,7 +101,6 @@ nav ul li a:hover::after {
     ),
     url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
     center/cover no-repeat;
-}
 
 .hero h1 {
     font-size: 76px;
@@ -184,9 +183,8 @@ nav ul li a:hover::after {
 }
 
 .service-card:hover {
-    border-color: silver;
+    border-color:silver;
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(192, 192, 192, 0.18);
 }
 
 .service-card h3 {
@@ -982,7 +980,9 @@ a:focus-visible {
         width: 100%;
         max-width: 280px;
     }
-}/* MOBILE HERO SPACING */
+}
+
+/* MOBILE HERO SPACING */
 @media (max-width: 600px) {
     .hero-line {
         margin-bottom: 20px;
@@ -1001,7 +1001,9 @@ a:focus-visible {
         line-height: 1.7;
         margin-bottom: 28px;
     }
-}/* PREMIUM SERVICE CARD ACCENT */
+}
+
+/* PREMIUM SERVICE CARD ACCENT */
 .service-card {
     position: relative;
     overflow: hidden;
@@ -1015,252 +1017,13 @@ a:focus-visible {
     width: 100%;
     height: 3px;
     background: linear-gradient(90deg, transparent, silver, transparent);
-}/* SERVICE CARD LAYOUT */
+}
+
+/* SERVICE CARD LAYOUT */
 .service-card {
     min-height: 260px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}/* VEHICLE PHOTO UPLOAD */
-
-#booking-form label[for="vehicle-photos"] {
-    grid-column: span 2;
-    color: silver;
-    font-size: 15px;
-    text-align: left;
-    margin-bottom: -15px;
 }
-
-#booking-form input[type="file"] {
-    grid-column: span 2;
-    background: #181818;
-    color: #ccc;
-    border: 1px solid #777;
-    border-radius: 5px;
-    padding: 15px;
-    cursor: pointer;
-}
-
-.upload-note {
-    grid-column: span 2;
-    color: #999 !important;
-    font-size: 13px !important;
-    line-height: 1.6;
-    text-align: left;
-    margin-bottom: 0 !important;
-}/* MOBILE PHOTO UPLOAD */
-
-@media (max-width: 768px) {
-    #booking-form label[for="vehicle-photos"] {
-        font-size: 14px;
-        margin-bottom: -8px;
-    }
-
-    #booking-form input[type="file"] {
-        width: 100%;
-        max-width: 100%;
-        padding: 12px;
-        font-size: 13px;
-    }
-
-    .upload-note {
-        font-size: 12px !important;
-    }
-}/* ABOUT SECTION ACCENT LINE */
-
-.about h2 {
-    position: relative;
-    margin-bottom: 35px;
-}
-
-.about h2::after {
-    content: "";
-    display: block;
-    width: 65px;
-    height: 3px;
-    background: silver;
-    margin: 20px auto 0;
-}html {
-    scroll-behavior: smooth;
-}/* INTERACTIVE PRICE SELECTOR */
-
-.price-selector {
-    background: #111;
-    padding: 80px 10%;
-    text-align: center;
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
-}
-
-.price-selector h2 {
-    font-size: 32px;
-    color: silver;
-    margin-bottom: 15px;
-}
-
-.price-selector > p {
-    color: #ccc;
-    margin-bottom: 35px;
-}
-
-.price-selector label {
-    display: block;
-    color: silver;
-    margin: 20px auto 10px;
-    text-align: left;
-    max-width: 500px;
-}
-
-.price-selector select {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 15px;
-    background: #222;
-    color: white;
-    border: 1px solid silver;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-#price-result {
-    margin: 35px auto;
-    padding: 25px;
-    max-width: 500px;
-    background: #1c1c1c;
-    border: 1px solid silver;
-    border-radius: 8px;
-}
-
-#price-result h3 {
-    color: silver;
-    margin-bottom: 12px;
-}
-
-#price-result p {
-    color: white;
-    font-size: 22px;
-}
-
-#use-package {
-    cursor: pointer;
-}/* VEHICLE SELECTION CARDS */
-
-.vehicle-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    max-width: 750px;
-    margin: 25px auto;
-}
-
-.vehicle-card {
-    background: #1c1c1c;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    padding: 18px 10px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.vehicle-card img {
-    width: 100%;
-    max-width: 150px;
-    height: 75px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-.vehicle-card span {
-    display: block;
-    font-size: 14px;
-}
-
-.vehicle-card:hover,
-.vehicle-card.selected {
-    border-color: silver;
-    background: #333;
-    box-shadow: none;
-    transform: translateY(-3px);
-}
-
-@media (max-width: 600px) {
-    .vehicle-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-}.price-selector select[hidden] {
-    display: none;
-}/* CUSTOM BOOKING CALENDAR */
-
-#booking-calendar {
-    max-width: 420px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #1c1c1c;
-    border: 1px solid #777;
-    border-radius: 10px;
-    color: white;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.calendar-header button {
-    background: #333;
-    color: white;
-    border: 1px solid #777;
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-    text-align: center;
-}
-
-.calendar-day {
-    padding: 10px 2px;
-    font-size: 13px;
-}
-
-.calendar-date {
-    min-height: 42px;
-    border: 1px solid #777;
-    background: #292929;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.calendar-date.booked {
-    background: #542626;
-    color: #ffbaba;
-    border-color: #a44;
-    cursor: not-allowed;
-    font-size: 10px;
-}
-
-.calendar-date.selected {
-    border: 2px solid white;
-    background: #555;
-}
-
-.calendar-date:disabled {
-    opacity: 0.8;
-}
-
-.calendar-legend {
-    margin-top: 18px;
-    font-size: 12px;
-    text-align: center;
 }
