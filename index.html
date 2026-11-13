@@ -1,207 +1,1266 @@
-<script>
-const dateInput = document.getElementById("date");
-const calendar = document.getElementById("booking-calendar");
 
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+/* MAIN SETTINGS */
 
-const maxDate = new Date(today);
-maxDate.setDate(maxDate.getDate() + 90);
-
-let displayedMonth = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    1
-);
-
-function formatDate(date) {
-    return date.getFullYear() + "-" +
-        String(date.getMonth() + 1).padStart(2, "0") + "-" +
-        String(date.getDate()).padStart(2, "0");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-function isBooked(date) {
-    const day = date.getDay();
+body {
+    background: black
 
-    // College days
-    if ([1, 3, 4].includes(day)) {
-        return true;
-    }
 
-    // Alternating weekends, starting 21 November 2026
-    const firstWeekend = new Date(2026, 10, 21);
-    firstWeekend.setHours(0, 0, 0, 0);
 
-    const difference = Math.round(
-        (date - firstWeekend) / 86400000
-    );
 
-    if (difference >= 0 && difference % 14 < 2) {
-        return true;
-    }
+    ;
+    color: white;
+    font-family: georgia
 
-    return false;
+
+
 }
 
-function renderCalendar() {
-    calendar.innerHTML = "";
+/* NAVIGATION BAR */
 
-    const year = displayedMonth.getFullYear();
-    const month = displayedMonth.getMonth();
-
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    const header = document.createElement("div");
-    header.className = "calendar-header";
-
-    const previous = document.createElement("button");
-    previous.type = "button";
-    previous.textContent = "‹";
-
-    previous.onclick = function() {
-        displayedMonth.setMonth(displayedMonth.getMonth() - 1);
-        renderCalendar();
-    };
-
-    const title = document.createElement("h3");
-    title.textContent = displayedMonth.toLocaleDateString(
-        "en-GB",
-        { month: "long", year: "numeric" }
-    );
-
-    const next = document.createElement("button");
-    next.type = "button";
-    next.textContent = "›";
-
-    next.onclick = function() {
-        displayedMonth.setMonth(displayedMonth.getMonth() + 1);
-        renderCalendar();
-    };
-
-    header.append(previous, title, next);
-    calendar.appendChild(header);
-
-    const grid = document.createElement("div");
-    grid.className = "calendar-grid";
-
-    ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-        .forEach(day => {
-            const label = document.createElement("div");
-            label.className = "calendar-day";
-            label.textContent = day;
-            grid.appendChild(label);
-        });
-
-    for (let i = 0; i < firstDay; i++) {
-        grid.appendChild(document.createElement("div"));
-    }
-
-    for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(year, month, day);
-        const dateString = formatDate(date);
-
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "calendar-date";
-
-        const number = document.createElement("span");
-        number.textContent = day;
-        button.appendChild(number);
-
-        const outsideRange = date < today || date > maxDate;
-        const booked = isBooked(date);
-
-        if (outsideRange || booked) {
-            button.disabled = true;
-        }
-
-        if (booked && !outsideRange) {
-            button.classList.add("booked");
-
-            const label = document.createElement("small");
-            label.textContent = "FULLY BOOKED";
-            button.appendChild(label);
-        }
-
-        if (dateString === dateInput.value) {
-            button.classList.add("selected");
-        }
-
-        if (!outsideRange && !booked) {
-            button.onclick = function() {
-                dateInput.value = dateString;
-                renderCalendar();
-            };
-        }
-
-        grid.appendChild(button);
-    }
-
-    calendar.appendChild(grid);
-
-    const legend = document.createElement("p");
-    legend.className = "calendar-legend";
-    legend.textContent =
-        "Available dates can be selected. Red dates are FULLY BOOKED.";
-
-    calendar.appendChild(legend);
+header {
+    background: #111;
+    padding: 25px 7%;
+    border-bottom: 1px solid silver
 }
 
-dateInput.addEventListener("click", renderCalendar);
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-// Initial calendar
-renderCalendar();
+.logo {
+    color: silver;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
-document.getElementById("booking-form").addEventListener(
-    "submit",
-    function(event) {
-        event.preventDefault();
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
 
-        const selectedDate = new Date(dateInput.value + "T12:00:00");
+nav ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
 
-        if (!dateInput.value || isBooked(selectedDate)) {
-            alert("Please choose an available date.");
-            return;
-        }
+nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
 
-        const bookingReference = "KAD-" +
-            Date.now().toString().slice(-6) + "-" +
-            Math.floor(100 + Math.random() * 900);
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: silver;
+    transition: width 0.3s ease;
+}
 
-        const name = document.getElementById("name").value;
-        const vehicle = document.getElementById("vehicle").value;
-        const vehicleType = document.getElementById("vehicle-type").value;
-        const registration = document.getElementById("registration").value;
-        const address = document.getElementById("address").value;
-        const service = document.getElementById("service").value;
-        const date = dateInput.value;
-        const time = document.getElementById("time").value;
-        const message = document.getElementById("message").value;
+nav ul li a:hover {
+    color: silver;
+    text-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+}
 
-        const bookingMessage =
-            "Hi, I'd like to request a car detailing booking.\n\n" +
-            "Booking Reference: " + bookingReference + "\n" +
-            "Name: " + name + "\n" +
-            "Vehicle: " + vehicle + "\n" +
-            "Vehicle Type: " + vehicleType + "\n" +
-            "Registration: " + registration + "\n" +
-            "Vehicle Location: " + address + "\n" +
-            "Service: " + service + "\n" +
-            "Preferred Date: " + date + "\n" +
-            "Preferred Time: " + time + "\n" +
-            "Additional Information: " + message + "\n\n" +
-            "Please remember to attach your vehicle photos if you have any.";
+nav ul li a:hover::after {
+    width: 100%;
+}
 
-        const whatsappURL =
-            "https://wa.me/447947602239?text=" +
-            encodeURIComponent(bookingMessage);
+/* HOMEPAGE */
 
-        document.getElementById("booking-status").textContent =
-            "Your enquiry reference is " + bookingReference +
-            ". Please send the WhatsApp message to complete your enquiry.";
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.75)
+    ),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
+    center/cover no-repeat;
+}
 
-        window.open(whatsappURL, "_blank");
+.hero h1 {
+    font-size: 76px;
+    color: white;
+    letter-spacing: 5px;
+    line-height: 1.15;
+    max-width: 1000px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero h2 {
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    color: silver;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    color: #e0e0e0;
+    font-size: 18px;
+    max-width: 650px;
+    line-height: 1.9;
+    margin: 0 auto 40px;
+    letter-spacing: 0.5px;
+}
+/* BOOKING BUTTON */
+
+.button {
+    background: linear-gradient(135deg, #eeeeee, #999999);
+    color: #000;
+    padding: 16px 32px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.button:hover {
+    background: white;
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.6);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* SERVICES */
+
+.services {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.services h2,
+.about h2 {
+    color: silver;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.service-card {
+    background: linear-gradient(145deg, #181818, #080808);
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 40px 25px;
+    width: 280px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color: silver;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(192, 192, 192, 0.18);
+}
+
+.service-card h3 {
+    color: silver;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+/* ABOUT */
+
+.about {
+    background: #111;
+    padding: 90px 15%;
+    text-align: center;
+}
+
+.about p {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 750px;
+    margin: 0 auto 20px;
+    overflow-wrap: anywhere;
+}
+
+/* CONTACT */
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+    background: #080808;
+}
+
+.contact h2 {
+    color: silver;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.contact p {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+/* FOOTER */
+
+footer {
+    background: #080808;
+    padding: 45px 20px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.footer-content h3 {
+    color: silver;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-content .copyright {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* MOBILE FRIENDLY */
+
+@media (max-width: 768px) {
+
+    header {
+        width: 100%;
+        padding: 20px 10px;
     }
-);
-</script>
+
+    .logo img {
+        width: 180px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .logo {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-align: center;
+        overflow-wrap: anywhere;
+        line-height: 1.4;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+        line-height: 1.3;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .services {
+        padding: 60px 15px;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .about {
+        width: 100%;
+        padding: 60px 15px;
+        text-align: center;
+    }
+
+    .about h2 {
+        font-size: 23px;
+        line-height: 1.5;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .about p {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+/* LOGO IMAGE */
+
+.logo img {
+    width: 220px;
+    height: auto;
+    display: block;
+}/* BOOKING SECTION */
+
+/* BOOKING SECTION */
+
+.booking {
+    background: #111;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.booking h2 {
+    color: silver;
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.booking p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+
+#booking-form {
+    max-width: 750px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    background: #080808;
+    padding: 35px;
+    border: 1px solid #444;
+    border-radius: 10px;
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea {
+    width: 100%;
+    padding: 17px;
+    background: #181818;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#booking-form textarea {
+    grid-column: span 2;
+    min-height: 120px;
+    resize: vertical;
+}
+
+#booking-form button {
+    grid-column: span 2;
+    padding: 18px;
+    cursor: pointer;
+}
+
+/* MOBILE BOOKING */
+
+@media (max-width: 768px) {
+
+    .booking {
+        padding: 65px 15px;
+    }
+
+    .booking h2 {
+        font-size: 27px;
+    }
+
+    #booking-form {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 18px;
+    }
+
+    #booking-form textarea,
+    #booking-form button {
+        grid-column: span 1;
+    }
+
+}/* BOOKING FORM - MOBILE FIX */
+
+@media (max-width: 768px) {
+
+    .booking {
+        padding: 55px 18px;
+        width: 100%;
+    }
+
+    .booking h2 {
+        font-size: 27px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .booking p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    #booking-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        gap: 18px;
+        margin: auto;
+    }
+
+    #booking-form input,
+    #booking-form select,
+    #booking-form textarea {
+        width: 100%;
+        min-width: 0;
+        padding: 15px;
+        font-size: 16px;
+        min-height: 52px;
+    }
+
+    #booking-form textarea {
+        min-height: 110px;
+    }
+
+    #booking-form button {
+        width: 100%;
+        padding: 17px 10px;
+        font-size: 13px;
+    }
+
+}/* BOOKING CONFIRMATION */
+
+#booking-status {
+    color: silver;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 15px;
+    text-align: center;
+}/* PRICING SECTION */
+
+.pricing {
+    background: #080808;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.pricing h2 {
+    color: silver;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.pricing-intro {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 55px;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.pricing-card {
+    background: #151515;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 40px 25px;
+    flex: 1;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card h3 {
+    color: silver;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.pricing-card h4 {
+    color: white;
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 30px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.pricing-card li {
+    color: #ccc;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.pricing-card li::before {
+    content: "✓";
+    color: silver;
+    margin-right: 10px;
+}
+
+.pricing-card .button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pricing-card.popular {
+    border: 2px solid silver;
+    transform: scale(1.04);
+}
+
+.popular-label {
+    color: silver;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.pricing-note {
+    color: #999;
+    font-size: 14px;
+    margin-top: 40px;
+}/* PRICING MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .pricing {
+        padding: 60px 18px;
+    }
+
+    .pricing h2 {
+        font-size: 28px;
+    }
+
+    .pricing-intro {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 30px 22px;
+    }
+
+    .pricing-card.popular {
+        transform: none;
+    }
+
+    .pricing-card h4 {
+        font-size: 36px;
+    }
+
+    .pricing-note {
+        line-height: 1.6;
+    }
+}/* PAYMENT SECTION */
+
+.payment {
+    background: #111;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.payment h2 {
+    color: silver;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.payment > p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.payment-card {
+    background: #080808;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1;
+}
+
+.payment-card h3 {
+    color: silver;
+    margin-bottom: 15px;
+}
+
+.payment-card p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.payment-note {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .payment-methods {
+        flex-direction: column;
+    }
+
+    .payment h2 {
+        font-size: 26px;
+    }
+}/* CUSTOMER REVIEWS SECTION */
+
+.reviews {
+    background: #080808;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.reviews h2 {
+    color: silver;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.reviews-intro {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+.reviews-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background: #151515;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 35px 25px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 340px;
+}
+
+.review-stars {
+    color: silver;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.review-card h3 {
+    color: silver;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* MOBILE REVIEWS */
+
+@media (max-width: 768px) {
+    .reviews {
+        padding: 60px 18px;
+    }
+
+    .reviews h2 {
+        font-size: 27px;
+    }
+
+    .reviews-intro {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}/* GOOGLE REVIEW BUTTON */
+
+.google-review-button {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.google-review-button .button {
+    padding: 18px 35px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}/* FADE IN ANIMATIONS */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}/* PREMIUM CARD ANIMATIONS */
+
+.service-card,
+.pricing-card,
+.review-card,
+.payment-card {
+    transition: transform 0.35s ease, border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.service-card:hover,
+.pricing-card:hover,
+.review-card:hover,
+.payment-card:hover {
+    transform: translateY(-8px);
+    border-color: silver;
+    box-shadow: 0 8px 25px rgba(192, 192, 192, 0.12);
+}/* ANIMATED HERO HEADING */
+
+.hero h1 {
+    animation: silverGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes silverGlow {
+    from {
+        text-shadow: 0 0 5px rgba(192, 192, 192, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
+    }
+}/* BACK TO TOP BUTTON */
+
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid silver;
+    border-radius: 50%;
+    background: #151515;
+    color: silver;
+    font-size: 26px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: silver;
+    color: black;
+    transform: translateY(-5px);
+}
+/* MOBILE BUTTON ADJUSTMENT */
+@media (max-width: 600px) {
+    #back-to-top {
+        width: 42px;
+        height: 42px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 22px;
+    }
+}/* KEYBOARD ACCESSIBILITY */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid silver;
+    outline-offset: 4px;
+}/* REDUCED MOTION ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}/* HERO BUTTON LAYOUT */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .button {
+    min-width: 200px;
+    padding: 18px 28px;
+}
+
+/* SECONDARY HERO BUTTON */
+
+.secondary-button {
+    background: transparent;
+    color: white;
+    border: 1px solid silver;
+}
+
+.secondary-button:hover {
+    background: silver;
+    color: black;
+}/* HERO LABEL */
+
+.hero-label {
+    display: block;
+    color: silver;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+/* SILVER ACCENT LINE */
+
+.hero-line {
+    width: 65px;
+    height: 3px;
+    background: silver;
+    margin: 0 auto 25px;
+}/* HERO CONTENT WIDTH */
+
+.hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}/* MOBILE HERO ADJUSTMENTS */
+@media (max-width: 600px) {
+    .hero {
+        min-height: 80vh;
+        padding: 80px 18px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+        max-width: 280px;
+    }
+}/* MOBILE HERO SPACING */
+@media (max-width: 600px) {
+    .hero-line {
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+
+    .hero h2 {
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+}/* PREMIUM SERVICE CARD ACCENT */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, silver, transparent);
+}/* SERVICE CARD LAYOUT */
+.service-card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}/* VEHICLE PHOTO UPLOAD */
+
+#booking-form label[for="vehicle-photos"] {
+    grid-column: span 2;
+    color: silver;
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: -15px;
+}
+
+#booking-form input[type="file"] {
+    grid-column: span 2;
+    background: #181818;
+    color: #ccc;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.upload-note {
+    grid-column: span 2;
+    color: #999 !important;
+    font-size: 13px !important;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 0 !important;
+}/* MOBILE PHOTO UPLOAD */
+
+@media (max-width: 768px) {
+    #booking-form label[for="vehicle-photos"] {
+        font-size: 14px;
+        margin-bottom: -8px;
+    }
+
+    #booking-form input[type="file"] {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .upload-note {
+        font-size: 12px !important;
+    }
+}/* ABOUT SECTION ACCENT LINE */
+
+.about h2 {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.about h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    background: silver;
+    margin: 20px auto 0;
+}html {
+    scroll-behavior: smooth;
+}/* INTERACTIVE PRICE SELECTOR */
+
+.price-selector {
+    background: #111;
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+
+.price-selector h2 {
+    font-size: 32px;
+    color: silver;
+    margin-bottom: 15px;
+}
+
+.price-selector > p {
+    color: #ccc;
+    margin-bottom: 35px;
+}
+
+.price-selector label {
+    display: block;
+    color: silver;
+    margin: 20px auto 10px;
+    text-align: left;
+    max-width: 500px;
+}
+
+.price-selector select {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#price-result {
+    margin: 35px auto;
+    padding: 25px;
+    max-width: 500px;
+    background: #1c1c1c;
+    border: 1px solid silver;
+    border-radius: 8px;
+}
+
+#price-result h3 {
+    color: silver;
+    margin-bottom: 12px;
+}
+
+#price-result p {
+    color: white;
+    font-size: 22px;
+}
+
+#use-package {
+    cursor: pointer;
+}/* VEHICLE SELECTION CARDS */
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.vehicle-card {
+    background: #1c1c1c;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 18px 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.vehicle-card img {
+    width: 100%;
+    max-width: 150px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.vehicle-card span {
+    display: block;
+    font-size: 14px;
+}
+
+.vehicle-card:hover,
+.vehicle-card.selected {
+    border-color: silver;
+    background: #333;
+    box-shadow: none;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .vehicle-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}.price-selector select[hidden] {
+    display: none;
+}/* CUSTOM BOOKING CALENDAR */
+
+#booking-calendar {
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #1c1c1c;
+    border: 1px solid #777;
+    border-radius: 10px;
+    color: white;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    background: #333;
+    color: white;
+    border: 1px solid #777;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 10px 2px;
+    font-size: 13px;
+}
+
+.calendar-date {
+    min-height: 42px;
+    border: 1px solid #777;
+    background: #292929;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-date.booked {
+    background: #542626;
+    color: #ffbaba;
+    border-color: #a44;
+    cursor: not-allowed;
+    font-size: 10px;
+}
+
+.calendar-date.selected {
+    border: 2px solid white;
+    background: #555;
+}
+
+.calendar-date:disabled {
+    opacity: 0.8;
+}
+
+.calendar-legend {
+    margin-top: 18px;
+    font-size: 12px;
+    text-align: center;
+}
