@@ -1194,4 +1194,73 @@ a:focus-visible {
     }
 }.price-selector select[hidden] {
     display: none;
+}/* CUSTOM BOOKING CALENDAR */
+
+#booking-calendar {
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #1c1c1c;
+    border: 1px solid #777;
+    border-radius: 10px;
+    color: white;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    background: #333;
+    color: white;
+    border: 1px solid #777;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 10px 2px;
+    font-size: 13px;
+}
+
+.calendar-date {
+    min-height: 42px;
+    border: 1px solid #777;
+    background: #292929;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-date.booked {
+    background: #542626;
+    color: #ffbaba;
+    border-color: #a44;
+    cursor: not-allowed;
+    font-size: 10px;
+}
+
+.calendar-date.selected {
+    border: 2px solid white;
+    background: #555;
+}
+
+.calendar-date:disabled {
+    opacity: 0.8;
+}
+
+.calendar-legend {
+    margin-top: 18px;
+    font-size: 12px;
+    text-align: center;
 }
