@@ -419,34 +419,122 @@
 </button>
 </footer>
 <script>
+// CUSTOM BOOKING CALENDAR
+
 const dateInput = document.getElementById("date");
+const calendar = document.getElementById("booking-calendar");
 
-const today = new Date();
-const localDate = new Date(
-    today.getTime() - today.getTimezoneOffset() * 60000
-).toISOString().split("T")[0];
+let calendarDate = new Date();
+let selectedDate = null;
 
+calendar.style.display = "none";
 
-dateInput.min = localDate;
-const maxDate = new Date();
-maxDate.setDate(maxDate.getDate() + 90);
+function renderCalendar() {
+    calendar.innerHTML = "";
 
-const maxLocalDate = new Date(
-    maxDate.getTime() - maxDate.getTimezoneOffset() * 60000
-).toISOString().split("T")[0];
+    const year = calendarDate.getFullYear();
+    const month = calendarDate.getMonth();
 
-dateInput.max = maxLocalDate;
-// Block college days: Monday, Wednesday and Thursday
-dateInput.addEventListener("change", function() {
-    const selectedDate = new Date(this.value + "T12:00:00");
-    const day = selectedDate.getDay();
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    if ([1, 3, 4].includes(day)) {
-        alert("Sorry, enquiries are only available Tuesday, Friday, Saturday and Sunday.");
-        this.value = "";
+    const header = document.createElement("div");
+    header.className = "calendar-header";
+
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.textContent = "‹";
+    previous.onclick = () => {
+        calendarDate.setMonth(calendarDate.getMonth() - 1);
+        renderCalendar();
+    };
+
+    const title = document.createElement("strong");
+    title.textContent = calendarDate.toLocaleDateString("en-GB", {
+        month: "long",
+        year: "numeric"
+    });
+
+    const next = document.createElement("button");
+    next.type = "button";
+    next.textContent = "›";
+    next.onclick = () => {
+        calendarDate.setMonth(calendarDate.getMonth() + 1);
+        renderCalendar();
+    };
+
+    header.append(previous, title, next);
+    calendar.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "calendar-grid";
+
+    ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+        const label = document.createElement("div");
+        label.className = "calendar-day";
+        label.textContent = day;
+        grid.appendChild(label);
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+        grid.appendChild(document.createElement("div"));
     }
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 90);
+    maxDate.setHours(0, 0, 0, 0);
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "calendar-date";
+        button.textContent = day;
+
+        const weekday = date.getDay();
+
+        if (
+            date < today ||
+            date > maxDate ||
+            [1, 3, 4].includes(weekday)
+        ) {
+            button.disabled = true;
+        }
+
+        if (
+            selectedDate &&
+            date.toDateString() === selectedDate.toDateString()
+        ) {
+            button.classList.add("selected");
+        }
+
+        button.addEventListener("click", () => {
+            selectedDate = date;
+
+            dateInput.value = date.toLocaleDateString("en-GB");
+
+            calendar.style.display = "none";
+            renderCalendar();
+        });
+
+        grid.appendChild(button);
+    }
+
+    calendar.appendChild(grid);
+}
+
+dateInput.addEventListener("click", () => {
+    calendar.style.display =
+        calendar.style.display === "none" ? "block" : "none";
+
+    renderCalendar();
 });
-console.log("Minimum booking date:", dateInput.min);
+
+renderCalendar();
 document.getElementById("booking-form").addEventListener("submit", function(event) {
 
     event.preventDefault();
