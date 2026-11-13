@@ -1080,4 +1080,10 @@ a:focus-visible {
     height: 3px;
     background: silver;
     margin: 20px auto 0;
+}@media (min-width: 769px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 }
