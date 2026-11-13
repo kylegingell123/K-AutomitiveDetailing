@@ -1,606 +1,207 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>K.AutomotiveDetailing | Mobile Car Detailing Derby</title>
-    <meta name="description" content="K.AutomotiveDetailing is a Derby-based mobile car detailing business offering interior, exterior and full vehicle detailing.">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="canonical" href="https://kautomotivedetailing.co.uk/">
-    <meta property="og:title" content="K.AutomotiveDetailing | Mobile Car Detailing Derby">
-<meta property="og:description" content="Mobile interior, exterior and full car detailing in Derby.">
-<meta property="og:url" content="https://kautomotivedetailing.co.uk/">
-<meta property="og:type" content="website">
-</head>
-
-<body>
-
-    <!-- NAVIGATION -->
-<header>
-        <nav>
-            <a class="logo" href="#home">
-    <img src="images/logo.png" alt="K.AutomotiveDetailing logo">
-</a>
-
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#booking">Enquiries</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- HOMEPAGE -->
-   <section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <span class="hero-label">DERBY • MOBILE AUTOMOTIVE DETAILING</span>
-
-        <div class="hero-line"></div>
-
-        <h1>PRECISION IN<br>EVERY DETAIL.</h1>
-
-        <h2>PREMIUM AUTOMOTIVE DETAILING</h2>
-
-        <p>
-            Exceptional attention to detail.
-            Convenient mobile vehicle care, brought directly to your door.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#services" class="button">EXPLORE SERVICES</a>
-
-            <a href="#contact" class="button secondary-button">GET IN TOUCH</a>
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-
-        <h2>OUR SERVICES</h2>
-
-        <div class="service-container">
-
-            <div class="service-card">
-                <h3>Interior Detailing</h3>
-                <p>
-    Give your vehicle's interior a fresh new feel. Our interior detailing focuses on cleaning carpets, upholstery, seats and interior surfaces, paying attention to the little details that make a difference.
-</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Exterior Detailing</h3>
-                <p>
-    Restore your vehicle's exterior appearance with a thorough clean. We focus on the bodywork, wheels, glass and finishing touches to leave your vehicle looking clean and refreshed.
-</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Full Detailing</h3>
-                <p>
-    The complete detailing experience. Combining our interior and exterior services to give your vehicle a thorough refresh, inside and out.
-</p>
-            </div>
-
-        </div>
-
-    </section>
-<!-- PRICING SECTION -->
-
-<section class="pricing" id="pricing">
-
-    <h2>OUR PRICING</h2>
-
-    <p class="pricing-intro">
-        Professional mobile detailing at competitive prices.
-    </p>
-
-    <div class="pricing-container">
-
-        <div class="pricing-card">
-            <h3>INTERIOR DETAILING</h3>
-            <h4>£40</h4>
-
-            <ul>
-                <li>Full interior vacuum</li>
-                <li>Seats and carpets cleaned</li>
-                <li>Dashboard and console cleaned</li>
-                <li>Door panels and pockets cleaned</li>
-                <li>Cup holders and storage areas cleaned</li>
-                <li>Interior windows cleaned</li>
-                <li>Floor mats cleaned</li>
-            </ul>
-
-            <a href="#booking" class="button">BOOK NOW</a>
-        </div>
-
-        <div class="pricing-card">
-            <h3>EXTERIOR DETAILING</h3>
-            <h4>£35</h4>
-
-            <ul>
-                <li>Exterior pre-wash</li>
-                <li>Wheel and tyre cleaning</li>
-                <li>Safe hand wash</li>
-                <li>Door shuts cleaned</li>
-                <li>Exterior windows cleaned</li>
-                <li>Microfibre towel drying</li>
-                <li>Tyre dressing</li>
-            </ul>
-
-            <a href="#booking" class="button">BOOK NOW</a>
-        </div>
-
-        <div class="pricing-card popular">
-            <span class="popular-label">MOST POPULAR</span>
-
-            <h3>FULL DETAILING</h3>
-            <h4>£65</h4>
-
-            <ul>
-                <li>Everything in Interior Detailing</li>
-                <li>Everything in Exterior Detailing</li>
-                <li>Complete interior refresh</li>
-                <li>Complete exterior wash</li>
-                <li>Interior and exterior glass</li>
-                <li>Full vehicle inspection</li>
-            </ul>
-
-            <a href="#booking" class="button">BOOK NOW</a>
-        </div>
-
-    </div>
-
-    <p class="pricing-note">
-        Prices are starting prices. Larger vehicles and heavily soiled
-        vehicles may require an additional charge.
-    </p>
-
-</section>
-<!-- INTERACTIVE PRICE SELECTOR -->
-
-<section class="price-selector" id="price-selector">
-
-    <h2>BUILD YOUR DETAILING PACKAGE</h2>
-
-    <p>Choose your service and vehicle to see the starting price.</p>
-
-    <label for="package-choice">Choose Your Service</label>
-    <select id="package-choice">
-        <option value="">Select a package</option>
-        <option value="Interior Detailing">Interior Detailing</option>
-        <option value="Exterior Detailing">Exterior Detailing</option>
-        <option value="Full Detailing">Full Detailing</option>
-    </select>
-
-    <label>Choose Your Vehicle</label>
-
-<div class="vehicle-grid">
-
-    <button type="button" class="vehicle-card" data-vehicle="Small Car">
-       <img src="images/small-car.png" alt="Small car">
-        <span>Small Car</span>
-    </button>
-
-    <button type="button" class="vehicle-card" data-vehicle="Hatchback">
-       <img src="images/hatchback.png" alt="Hatchback">
-        <span>Hatchback</span>
-    </button>
-
-    <button type="button" class="vehicle-card" data-vehicle="Saloon">
-        <img src="images/saloon.png" alt="Saloon">
-        <span>Saloon</span>
-    </button>
-
-    <button type="button" class="vehicle-card" data-vehicle="Estate">
-        <img src="images/estate.png" alt="Estate car">
-        <span>Estate</span>
-    </button>
-
-    <button type="button" class="vehicle-card" data-vehicle="SUV">
-        <img src="images/suv.png" alt="SUV">
-        <span>SUV</span>
-    </button>
-
-    <button type="button" class="vehicle-card" data-vehicle="4x4">
-     <img src="images/4x4.png" alt="4x4 vehicle">
-        <span>4x4</span>
-    </button>
-
-    <button type="button" class="vehicle-card" data-vehicle="Van">
-      <img src="images/van.png" alt="Van">
-        <span>Van</span>
-    </button>
-
-</div>
-
-<select id="vehicle-choice" hidden>
-    <option value="">Select your vehicle</option>
-    <option value="Small Car">Small Car</option>
-    <option value="Hatchback">Hatchback</option>
-    <option value="Saloon">Saloon</option>
-    <option value="Estate">Estate</option>
-    <option value="SUV">SUV</option>
-    <option value="4x4">4x4</option>
-    <option value="Van">Van</option>
-</select>
-
-    <div id="price-result">
-        <h3>Your Starting Price</h3>
-        <p>Select your options above.</p>
-    </div>
-
-    <button type="button" id="use-package" class="button">
-        CONTINUE TO ENQUIRY
-    </button>
-
-</section>
-<!-- PAYMENT INFORMATION -->
-
-<section class="payment">
-
-    <h2>PAYMENT INFORMATION</h2>
-
-    <p>We currently accept the following payment methods:</p>
-
-    <div class="payment-methods">
-
-        <div class="payment-card">
-            <h3>💷 CASH</h3>
-            <p>Pay in person once your detailing service is complete.</p>
-        </div>
-
-        <div class="payment-card">
-            <h3>🏦 BANK TRANSFER</h3>
-            <p>Pay securely by bank transfer once your detailing service is complete.</p>
-        </div>
-
-    </div>
-
-    <p class="payment-note">
-        All prices are agreed with customers before work begins.
-    </p>
-
-</section>
-
-<!-- OUR APPROACH -->
-<section class="reviews" id="reviews">
-
-    <h2>OUR APPROACH</h2>
-
-    <p class="reviews-intro">
-        Our goal is to make every vehicle detailing experience
-        straightforward, careful and convenient.
-    </p>
-
-    <div class="reviews-container">
-
-        <div class="review-card">
-            <h3>ATTENTION TO DETAIL</h3>
-            <p>
-                We aim to give every area of your vehicle
-                the care and attention it deserves.
-            </p>
-        </div>
-
-        <div class="review-card">
-            <h3>CLEAR COMMUNICATION</h3>
-            <p>
-                We believe in clear pricing, honest communication
-                and agreeing the work before it begins.
-            </p>
-        </div>
-
-        <div class="review-card">
-            <h3>CARE AND RESPECT</h3>
-            <p>
-                Our aim is to treat every vehicle with care
-                and approach every job professionally.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<div class="google-review-button">
-    <a href="https://g.page/r/CeWnXYywvIUnEBM/review"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="button">
-        LEAVE US A GOOGLE REVIEW
-    </a>
-</div>
-    <!-- ABOUT -->
-    <section class="about" id="about">
-    <h2>ABOUT K.AUTOMOTIVEDETAILING</h2>
-<p>K.AutomotiveDetailing is a Derby-based mobile automotive detailing business preparing to launch. Built around a passion for cars and an appreciation for the finer details, our aim is to provide convenient, reliable vehicle care with a professional approach. We believe in honest communication, clear pricing and treating every vehicle with care.</p>
-</section>
-
-    <!-- CONTACT -->
-     <!-- BOOKING SECTION -->
-
-<section class="booking" id="booking">
-
-    <h2>MAKE AN ENQUIRY</h2>
-
-   <p>Interested in our detailing services? Send us an enquiry and we'll be happy to discuss your requirements.</p>
-
-    <form id="booking-form">
-
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="text" id="registration" placeholder="Vehicle Registration" required>
-
-        <input type="text" id="vehicle" placeholder="Vehicle Make & Model" required>
-        <input type="text" id="address" placeholder="Vehicle Location (Street, Town & Postcode)" required>
-        <select id="vehicle-type" required>
-    <option value="">Choose Vehicle Type</option>
-    <option>Small Car</option>
-    <option>Hatchback</option>
-    <option>Saloon</option>
-    <option>Estate</option>
-    <option>SUV</option>
-    <option>4x4</option>
-    <option>Van</option>
-    <option>Other</option>
-</select>
-
-        <select id="service" required>
-            <option value="">Choose a Service</option>
-            <option>Interior Detailing</option>
-            <option>Exterior Detailing</option>
-            <option>Full Detailing</option>
-        </select>
-
-        <input type="date" id="date" required>
-
-        <select id="time" required>
-            <option value="">Preferred Time</option>
-            <option>Morning</option>
-            <option>Afternoon</option>
-            <option>Evening</option>
-        </select>
-
-        <textarea id="message" placeholder="Additional Information"></textarea>
-        <label for="vehicle-photos">Upload Vehicle Photos (Optional)</label>
-<input type="file" id="vehicle-photos" accept="image/*" multiple>
-<p class="upload-note">
-    After sending your enquiry on WhatsApp, please attach your vehicle photos to help us assess your requirements.
-</p>
-
-        <button type="submit" class="button">SEND ENQUIRY</button>
-        <p id="booking-status"></p>
-
-    </form>
-
-</section>
-
-    <section class="contact" id="contact">
-    <h2>READY TO TRANSFORM YOUR VEHICLE?</h2>
-
-    <p>
-        Looking for professional mobile car detailing in Derby or surrounding areas?
-        Get in touch with K.AutomotiveDetailing today.
-    </p>
-
-    <a href="https://wa.me/447947602239?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20your%20detailing%20services."
-       class="button"
-       target="_blank"
-       rel="noopener noreferrer">
-        MESSAGE US ON WHATSAPP
-    </a>
-</section>
-
-    <footer>
-    <div class="footer-content">
-        <h3>K.AUTOMOTIVEDETAILING</h3>
-
-        <p>Premium Mobile Automotive Detailing</p>
-
-        <p>Based in Derby | Serving surrounding areas</p>
-
-        <p class="copyright">
-            © 2026 K.AutomotiveDetailing. All rights reserved.
-        </p>
-    </div>
-<!-- BACK TO TOP BUTTON -->
-<button id="back-to-top" title="Back to Top">
-    ↑
-</button>
-</footer>
 <script>
 const dateInput = document.getElementById("date");
+const calendar = document.getElementById("booking-calendar");
 
 const today = new Date();
-const localDate = new Date(
-    today.getTime() - today.getTimezoneOffset() * 60000
-).toISOString().split("T")[0];
+today.setHours(0, 0, 0, 0);
 
-
-dateInput.min = localDate;
-const maxDate = new Date();
+const maxDate = new Date(today);
 maxDate.setDate(maxDate.getDate() + 90);
 
-const maxLocalDate = new Date(
-    maxDate.getTime() - maxDate.getTimezoneOffset() * 60000
-).toISOString().split("T")[0];
-
-dateInput.max = maxLocalDate;
-// Block college days: Monday, Wednesday and Thursday
-dateInput.addEventListener("change", function() {
-    const selectedDate = new Date(this.value + "T12:00:00");
-    const day = selectedDate.getDay();
-
-    if ([1, 3, 4].includes(day)) {
-        alert("Sorry, enquiries are only available Tuesday, Friday, Saturday and Sunday.");
-        this.value = "";
-    }
-});
-console.log("Minimum booking date:", dateInput.min);
-document.getElementById("booking-form").addEventListener("submit", function(event) {
-
-    event.preventDefault();
-    const bookingReference = "KAD-" +
-    Date.now().toString().slice(-6) + "-" +
-    Math.floor(100 + Math.random() * 900);
-
-    const name = document.getElementById("name").value;
-    const vehicle = document.getElementById("vehicle").value;
-    const vehicleType = document.getElementById("vehicle-type").value;
-    const registration = document.getElementById("registration").value;
-    const address = document.getElementById("address").value;
-    const service = document.getElementById("service").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
-    const message = document.getElementById("message").value;
-
-    const bookingMessage =
-    "Hi, I'd like to request a car detailing booking.\n\n" +
-    "Booking Reference: " + bookingReference + "\n" +
-        "Name: " + name + "\n" +
-        "Vehicle: " + vehicle + "\n" +
-    "Vehicle Type: " + vehicleType + "\n" +
-    "Registration: " + registration + "\n" +
-    "Vehicle Location: " + address + "\n" +
-    "Service: " + service + "\n" +
-    "Preferred Date: " + date + "\n" +
-    "Preferred Time: " + time + "\n" +
-    "Additional Information: " + message + "\n\n" +
-"Please remember to attach your vehicle photos to this WhatsApp message if you have any.";
-
-    const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
-
-    document.getElementById("booking-status").textContent =
-"Your enquiry reference is " + bookingReference +
-". Please send the WhatsApp message to complete your enquiry. We will respond when we're ready to discuss your requirements.";
-
-    window.open(whatsappURL, "_blank");
-});
-</script>
-<script>
-const animatedSections = document.querySelectorAll(
-    ".services, .pricing, .payment, .reviews, .about, .booking, .contact"
+let displayedMonth = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    1
 );
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in", "visible");
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.15
-});
-
-animatedSections.forEach((section) => {
-    section.classList.add("fade-in");
-    observer.observe(section);
-});// BACK TO TOP BUTTON
-
-const backToTopButton = document.getElementById("back-to-top");
-
-window.addEventListener("scroll", function() {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add("show");
-    } else {
-        backToTopButton.classList.remove("show");
-    }
-});
-
-backToTopButton.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});// INTERACTIVE PRICE SELECTOR
-
-const packageChoice = document.getElementById("package-choice");
-const vehicleChoice = document.getElementById("vehicle-choice");
-const priceResult = document.getElementById("price-result");
-const usePackageButton = document.getElementById("use-package");
-
-const startingPrices = {
-    "Interior Detailing": 40,
-    "Exterior Detailing": 35,
-    "Full Detailing": 65
-};
-
-function updatePrice() {
-    const selectedPackage = packageChoice.value;
-    const selectedVehicle = vehicleChoice.value;
-
-    if (!selectedPackage || !selectedVehicle) {
-        priceResult.innerHTML = `
-            <h3>Your Starting Price</h3>
-            <p>Select your service and vehicle above.</p>
-        `;
-        return;
-    }
-
-    const price = startingPrices[selectedPackage];
-
-    priceResult.innerHTML = `
-        <h3>${selectedPackage}</h3>
-        <p>From £${price}</p>
-        <small>
-            Vehicle selected: ${selectedVehicle}. 
-            Larger vehicles and heavily soiled vehicles may cost extra.
-            Final price will be agreed before work begins.
-        </small>
-    `;
+function formatDate(date) {
+    return date.getFullYear() + "-" +
+        String(date.getMonth() + 1).padStart(2, "0") + "-" +
+        String(date.getDate()).padStart(2, "0");
 }
 
-packageChoice.addEventListener("change", updatePrice);
-vehicleChoice.addEventListener("change", updatePrice);
-// VEHICLE CARD SELECTION
+function isBooked(date) {
+    const day = date.getDay();
 
-const vehicleCards = document.querySelectorAll(".vehicle-card");
-
-vehicleCards.forEach(card => {
-    card.addEventListener("click", function() {
-
-        const selectedVehicle = this.dataset.vehicle;
-
-        vehicleChoice.value = selectedVehicle;
-
-        vehicleCards.forEach(item => {
-            item.classList.remove("selected");
-        });
-
-        this.classList.add("selected");
-
-        updatePrice();
-    });
-});
-
-usePackageButton.addEventListener("click", function() {
-    if (!packageChoice.value || !vehicleChoice.value) {
-        priceResult.innerHTML = `
-            <h3>Almost there!</h3>
-            <p>Please select both options first.</p>
-        `;
-        return;
+    // College days
+    if ([1, 3, 4].includes(day)) {
+        return true;
     }
 
-    document.getElementById("service").value = packageChoice.value;
-    document.getElementById("vehicle-type").value = vehicleChoice.value;
+    // Alternating weekends, starting 21 November 2026
+    const firstWeekend = new Date(2026, 10, 21);
+    firstWeekend.setHours(0, 0, 0, 0);
 
-    document.getElementById("booking").scrollIntoView({
-        behavior: "smooth"
-    });
-});
+    const difference = Math.round(
+        (date - firstWeekend) / 86400000
+    );
+
+    if (difference >= 0 && difference % 14 < 2) {
+        return true;
+    }
+
+    return false;
+}
+
+function renderCalendar() {
+    calendar.innerHTML = "";
+
+    const year = displayedMonth.getFullYear();
+    const month = displayedMonth.getMonth();
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const header = document.createElement("div");
+    header.className = "calendar-header";
+
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.textContent = "‹";
+
+    previous.onclick = function() {
+        displayedMonth.setMonth(displayedMonth.getMonth() - 1);
+        renderCalendar();
+    };
+
+    const title = document.createElement("h3");
+    title.textContent = displayedMonth.toLocaleDateString(
+        "en-GB",
+        { month: "long", year: "numeric" }
+    );
+
+    const next = document.createElement("button");
+    next.type = "button";
+    next.textContent = "›";
+
+    next.onclick = function() {
+        displayedMonth.setMonth(displayedMonth.getMonth() + 1);
+        renderCalendar();
+    };
+
+    header.append(previous, title, next);
+    calendar.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "calendar-grid";
+
+    ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        .forEach(day => {
+            const label = document.createElement("div");
+            label.className = "calendar-day";
+            label.textContent = day;
+            grid.appendChild(label);
+        });
+
+    for (let i = 0; i < firstDay; i++) {
+        grid.appendChild(document.createElement("div"));
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const dateString = formatDate(date);
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "calendar-date";
+
+        const number = document.createElement("span");
+        number.textContent = day;
+        button.appendChild(number);
+
+        const outsideRange = date < today || date > maxDate;
+        const booked = isBooked(date);
+
+        if (outsideRange || booked) {
+            button.disabled = true;
+        }
+
+        if (booked && !outsideRange) {
+            button.classList.add("booked");
+
+            const label = document.createElement("small");
+            label.textContent = "FULLY BOOKED";
+            button.appendChild(label);
+        }
+
+        if (dateString === dateInput.value) {
+            button.classList.add("selected");
+        }
+
+        if (!outsideRange && !booked) {
+            button.onclick = function() {
+                dateInput.value = dateString;
+                renderCalendar();
+            };
+        }
+
+        grid.appendChild(button);
+    }
+
+    calendar.appendChild(grid);
+
+    const legend = document.createElement("p");
+    legend.className = "calendar-legend";
+    legend.textContent =
+        "Available dates can be selected. Red dates are FULLY BOOKED.";
+
+    calendar.appendChild(legend);
+}
+
+dateInput.addEventListener("click", renderCalendar);
+
+// Initial calendar
+renderCalendar();
+
+document.getElementById("booking-form").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        const selectedDate = new Date(dateInput.value + "T12:00:00");
+
+        if (!dateInput.value || isBooked(selectedDate)) {
+            alert("Please choose an available date.");
+            return;
+        }
+
+        const bookingReference = "KAD-" +
+            Date.now().toString().slice(-6) + "-" +
+            Math.floor(100 + Math.random() * 900);
+
+        const name = document.getElementById("name").value;
+        const vehicle = document.getElementById("vehicle").value;
+        const vehicleType = document.getElementById("vehicle-type").value;
+        const registration = document.getElementById("registration").value;
+        const address = document.getElementById("address").value;
+        const service = document.getElementById("service").value;
+        const date = dateInput.value;
+        const time = document.getElementById("time").value;
+        const message = document.getElementById("message").value;
+
+        const bookingMessage =
+            "Hi, I'd like to request a car detailing booking.\n\n" +
+            "Booking Reference: " + bookingReference + "\n" +
+            "Name: " + name + "\n" +
+            "Vehicle: " + vehicle + "\n" +
+            "Vehicle Type: " + vehicleType + "\n" +
+            "Registration: " + registration + "\n" +
+            "Vehicle Location: " + address + "\n" +
+            "Service: " + service + "\n" +
+            "Preferred Date: " + date + "\n" +
+            "Preferred Time: " + time + "\n" +
+            "Additional Information: " + message + "\n\n" +
+            "Please remember to attach your vehicle photos if you have any.";
+
+        const whatsappURL =
+            "https://wa.me/447947602239?text=" +
+            encodeURIComponent(bookingMessage);
+
+        document.getElementById("booking-status").textContent =
+            "Your enquiry reference is " + bookingReference +
+            ". Please send the WhatsApp message to complete your enquiry.";
+
+        window.open(whatsappURL, "_blank");
+    }
+);
 </script>
-</body>
-</html>
