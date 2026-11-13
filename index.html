@@ -168,6 +168,44 @@
     </p>
 
 </section>
+<!-- INTERACTIVE PRICE SELECTOR -->
+
+<section class="price-selector" id="price-selector">
+
+    <h2>BUILD YOUR DETAILING PACKAGE</h2>
+
+    <p>Choose your service and vehicle to see the starting price.</p>
+
+    <label for="package-choice">Choose Your Service</label>
+    <select id="package-choice">
+        <option value="">Select a package</option>
+        <option value="Interior Detailing">Interior Detailing</option>
+        <option value="Exterior Detailing">Exterior Detailing</option>
+        <option value="Full Detailing">Full Detailing</option>
+    </select>
+
+    <label for="vehicle-choice">Choose Your Vehicle</label>
+    <select id="vehicle-choice">
+        <option value="">Select your vehicle</option>
+        <option value="Small Car">Small Car</option>
+        <option value="Hatchback">Hatchback</option>
+        <option value="Saloon">Saloon</option>
+        <option value="Estate">Estate</option>
+        <option value="SUV">SUV</option>
+        <option value="4x4">4x4</option>
+        <option value="Van">Van</option>
+    </select>
+
+    <div id="price-result">
+        <h3>Your Starting Price</h3>
+        <p>Select your options above.</p>
+    </div>
+
+    <button type="button" id="use-package" class="button">
+        CONTINUE TO ENQUIRY
+    </button>
+
+</section>
 <!-- PAYMENT INFORMATION -->
 
 <section class="payment">
@@ -434,6 +472,62 @@ window.addEventListener("scroll", function() {
 backToTopButton.addEventListener("click", function() {
     window.scrollTo({
         top: 0,
+        behavior: "smooth"
+    });
+});// INTERACTIVE PRICE SELECTOR
+
+const packageChoice = document.getElementById("package-choice");
+const vehicleChoice = document.getElementById("vehicle-choice");
+const priceResult = document.getElementById("price-result");
+const usePackageButton = document.getElementById("use-package");
+
+const startingPrices = {
+    "Interior Detailing": 40,
+    "Exterior Detailing": 35,
+    "Full Detailing": 65
+};
+
+function updatePrice() {
+    const selectedPackage = packageChoice.value;
+    const selectedVehicle = vehicleChoice.value;
+
+    if (!selectedPackage || !selectedVehicle) {
+        priceResult.innerHTML = `
+            <h3>Your Starting Price</h3>
+            <p>Select your service and vehicle above.</p>
+        `;
+        return;
+    }
+
+    const price = startingPrices[selectedPackage];
+
+    priceResult.innerHTML = `
+        <h3>${selectedPackage}</h3>
+        <p>From £${price}</p>
+        <small>
+            Vehicle selected: ${selectedVehicle}. 
+            Larger vehicles and heavily soiled vehicles may cost extra.
+            Final price will be agreed before work begins.
+        </small>
+    `;
+}
+
+packageChoice.addEventListener("change", updatePrice);
+vehicleChoice.addEventListener("change", updatePrice);
+
+usePackageButton.addEventListener("click", function() {
+    if (!packageChoice.value || !vehicleChoice.value) {
+        priceResult.innerHTML = `
+            <h3>Almost there!</h3>
+            <p>Please select both options first.</p>
+        `;
+        return;
+    }
+
+    document.getElementById("service").value = packageChoice.value;
+    document.getElementById("vehicle-type").value = vehicleChoice.value;
+
+    document.getElementById("booking").scrollIntoView({
         behavior: "smooth"
     });
 });
