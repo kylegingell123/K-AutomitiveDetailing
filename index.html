@@ -259,6 +259,17 @@
 
         <input type="text" id="vehicle" placeholder="Vehicle Make & Model" required>
         <input type="text" id="address" placeholder="Vehicle Location (Street, Town & Postcode)" required>
+        <select id="vehicle-type" required>
+    <option value="">Choose Vehicle Type</option>
+    <option>Small Car</option>
+    <option>Hatchback</option>
+    <option>Saloon</option>
+    <option>Estate</option>
+    <option>SUV</option>
+    <option>4x4</option>
+    <option>Van</option>
+    <option>Other</option>
+</select>
 
         <select id="service" required>
             <option value="">Choose a Service</option>
@@ -277,6 +288,11 @@
         </select>
 
         <textarea id="message" placeholder="Additional Information"></textarea>
+        <label for="vehicle-photos">Upload Vehicle Photos (Optional)</label>
+<input type="file" id="vehicle-photos" accept="image/*" multiple>
+<p class="upload-note">
+    After sending your enquiry on WhatsApp, please attach your vehicle photos to help us assess your requirements.
+</p>
 
         <button type="submit" class="button">SEND ENQUIRY</button>
         <p id="booking-status"></p>
@@ -346,6 +362,7 @@ document.getElementById("booking-form").addEventListener("submit", function(even
 
     const name = document.getElementById("name").value;
     const vehicle = document.getElementById("vehicle").value;
+    const vehicleType = document.getElementById("vehicle-type").value;
     const registration = document.getElementById("registration").value;
     const address = document.getElementById("address").value;
     const service = document.getElementById("service").value;
@@ -358,12 +375,14 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     "Booking Reference: " + bookingReference + "\n" +
         "Name: " + name + "\n" +
         "Vehicle: " + vehicle + "\n" +
-        "Registration: " + registration + "\n" +
-        "Vehicle Location: " + address + "\n" +
-        "Service: " + service + "\n" +
-        "Preferred Date: " + date + "\n" +
-        "Preferred Time: " + time + "\n" +
-        "Additional Information: " + message;
+    "Vehicle Type: " + vehicleType + "\n" +
+    "Registration: " + registration + "\n" +
+    "Vehicle Location: " + address + "\n" +
+    "Service: " + service + "\n" +
+    "Preferred Date: " + date + "\n" +
+    "Preferred Time: " + time + "\n" +
+    "Additional Information: " + message + "\n\n" +
+"Please remember to attach your vehicle photos to this WhatsApp message if you have any.";
 
     const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
 
