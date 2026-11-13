@@ -258,6 +258,7 @@
         <input type="text" id="registration" placeholder="Vehicle Registration" required>
 
         <input type="text" id="vehicle" placeholder="Vehicle Make & Model" required>
+        <input type="text" id="address" placeholder="Vehicle Location (Street, Town & Postcode)" required>
 
         <select id="service" required>
             <option value="">Choose a Service</option>
@@ -346,6 +347,7 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     const name = document.getElementById("name").value;
     const vehicle = document.getElementById("vehicle").value;
     const registration = document.getElementById("registration").value;
+    const address = document.getElementById("address").value;
     const service = document.getElementById("service").value;
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
@@ -357,6 +359,7 @@ document.getElementById("booking-form").addEventListener("submit", function(even
         "Name: " + name + "\n" +
         "Vehicle: " + vehicle + "\n" +
         "Registration: " + registration + "\n" +
+        "Vehicle Location: " + address + "\n" +
         "Service: " + service + "\n" +
         "Preferred Date: " + date + "\n" +
         "Preferred Time: " + time + "\n" +
