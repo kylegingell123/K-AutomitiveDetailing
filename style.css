@@ -1145,4 +1145,54 @@ a:focus-visible {
 
 #use-package {
     cursor: pointer;
+}/* VEHICLE SELECTION CARDS */
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.vehicle-card {
+    background: #1c1c1c;
+    border: 1px solid #777;
+    border-radius: 8px;
+    padding: 18px 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.vehicle-card svg {
+    width: 100%;
+    max-width: 110px;
+    height: 55px;
+    fill: none;
+    stroke: silver;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-bottom: 10px;
+}
+
+.vehicle-card span {
+    display: block;
+    font-size: 14px;
+}
+
+.vehicle-card:hover,
+.vehicle-card.selected {
+    border-color: silver;
+    background: #333;
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.25);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .vehicle-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
