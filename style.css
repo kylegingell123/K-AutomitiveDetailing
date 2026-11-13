@@ -1264,4 +1264,43 @@ a:focus-visible {
     margin-top: 18px;
     font-size: 12px;
     text-align: center;
+}/* DATE PICKER LAYOUT FIX */
+
+#date {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 52px;
+    cursor: pointer;
+}
+
+#booking-calendar {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 15px;
+    display: none;
+}
+
+#booking-calendar .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#booking-calendar .calendar-header button {
+    min-width: 40px;
+    min-height: 40px;
+}
+
+#booking-calendar .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+#booking-calendar .calendar-date {
+    width: 100%;
+    min-height: 42px;
+    padding: 5px;
 }
