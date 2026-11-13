@@ -1321,4 +1321,11 @@ a:focus-visible {
 #booking-calendar .calendar-date {
     min-width: 0;
     width: 100%;
+}/* UNAVAILABLE BOOKING DAYS */
+#booking-calendar .calendar-date:disabled {
+    background: #8b2525;
+    color: #ffffff;
+    border: 1px solid #c0392b;
+    opacity: 1;
+    cursor: not-allowed;
 }
