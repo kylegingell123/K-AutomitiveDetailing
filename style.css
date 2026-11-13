@@ -1165,16 +1165,13 @@ a:focus-visible {
     transition: 0.3s ease;
 }
 
-.vehicle-card svg {
+.vehicle-card img {
     width: 100%;
-    max-width: 110px;
-    height: 55px;
-    fill: none;
-    stroke: silver;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    margin-bottom: 10px;
+    max-width: 150px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 .vehicle-card span {
@@ -1195,4 +1192,6 @@ a:focus-visible {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
+}.price-selector select[hidden] {
+    display: none;
 }
