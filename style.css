@@ -1,5 +1,4 @@
 
-
 /* MAIN SETTINGS */
 
 * {
@@ -1083,4 +1082,67 @@ a:focus-visible {
     margin: 20px auto 0;
 }html {
     scroll-behavior: smooth;
+}/* INTERACTIVE PRICE SELECTOR */
+
+.price-selector {
+    background: #111;
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+
+.price-selector h2 {
+    font-size: 32px;
+    color: silver;
+    margin-bottom: 15px;
+}
+
+.price-selector > p {
+    color: #ccc;
+    margin-bottom: 35px;
+}
+
+.price-selector label {
+    display: block;
+    color: silver;
+    margin: 20px auto 10px;
+    text-align: left;
+    max-width: 500px;
+}
+
+.price-selector select {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#price-result {
+    margin: 35px auto;
+    padding: 25px;
+    max-width: 500px;
+    background: #1c1c1c;
+    border: 1px solid silver;
+    border-radius: 8px;
+}
+
+#price-result h3 {
+    color: silver;
+    margin-bottom: 12px;
+}
+
+#price-result p {
+    color: white;
+    font-size: 22px;
+}
+
+#use-package {
+    cursor: pointer;
 }
