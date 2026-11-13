@@ -1066,4 +1066,18 @@ a:focus-visible {
     .upload-note {
         font-size: 12px !important;
     }
+}/* ABOUT SECTION ACCENT LINE */
+
+.about h2 {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.about h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    background: silver;
+    margin: 20px auto 0;
 }
