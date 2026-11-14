@@ -1468,4 +1468,6 @@ nav ul li a::after {
         box-shadow: 0 0 15px rgba(214, 181, 109, 0.5) !important;
         outline: none;
     }
+}.vehicle-card {
+    -webkit-tap-highlight-color: transparent;
 }
