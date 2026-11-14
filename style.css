@@ -1440,4 +1440,11 @@ nav ul li a::after {
         align-items: center;
         text-align: center;
     }
+}/* MOBILE SERVICE CARD CONTENT CENTRING */
+@media (max-width: 768px) {
+    .service-card {
+        display: grid;
+        align-content: center;
+        text-align: center;
+    }
 }
