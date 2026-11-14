@@ -1460,4 +1460,12 @@ nav ul li a::after {
     .services .service-container {
         margin-top: 0 !important;
     }
+}@media (max-width: 768px) {
+    .vehicle-card.selected,
+    .vehicle-card:focus,
+    .vehicle-card:active {
+        border-color: #D6B56D !important;
+        box-shadow: 0 0 15px rgba(214, 181, 109, 0.5) !important;
+        outline: none;
+    }
 }
