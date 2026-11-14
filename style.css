@@ -1251,9 +1251,11 @@ a:focus-visible {
     font-size: 10px;
 }
 
-.calendar-date.selected {
-    border: 2px solid white;
-    background: #555;
+.calendar-date.selected .calendar-date.selected {
+    border: 2px solid #D6B56D;
+    background: #D6B56D;
+    color: #080B09;
+    box-shadow: 0 0 12px rgba(214, 181, 109, 0.4);
 }
 
 .calendar-date:disabled {
