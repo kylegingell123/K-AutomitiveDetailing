@@ -1251,7 +1251,7 @@ a:focus-visible {
     font-size: 10px;
 }
 
-.calendar-date.selected .calendar-date.selected {
+.calendar-date.selected {
     border: 2px solid #D6B56D;
     background: #D6B56D;
     color: #080B09;
@@ -1472,4 +1472,10 @@ nav ul li a::after {
     }
 }.vehicle-card {
     -webkit-tap-highlight-color: transparent;
+}#booking-form input:focus,
+#booking-form select:focus,
+#booking-form textarea:focus {
+    border-color: #D6B56D;
+    box-shadow: 0 0 10px rgba(214, 181, 109, 0.3);
+    outline: none;
 }
