@@ -1499,4 +1499,6 @@ nav ul li a::after {
 .price-selector,
 footer {
     background: transparent !important;
+}.about {
+    background: transparent !important;
 }
