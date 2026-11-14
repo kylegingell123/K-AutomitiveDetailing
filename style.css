@@ -75,8 +75,8 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-    color: silver;
-    text-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+    color: #D6B56D;
+    text-shadow: 0 0 8px rgba(214, 181, 109, 0.5);
 }
 
 nav ul li a:hover::after {
