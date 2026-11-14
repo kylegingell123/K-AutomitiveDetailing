@@ -1434,4 +1434,10 @@ nav ul li a::after {
 }/* SPACE ABOVE SERVICE CARDS */
 .services .service-container {
     margin-top: 60px !important;
+}@media (max-width: 768px) {
+    .service-card {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
