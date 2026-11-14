@@ -1,1463 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* MAIN SETTINGS */
+    <title>K.AutomotiveDetailing | Mobile Car Detailing Derby</title>
+    <meta name="description" content="K.AutomotiveDetailing is a Derby-based mobile car detailing business offering interior, exterior and full vehicle detailing.">
+<meta name="google-site-verification" content="3lFcGwFGgiBPNu2dkAWqpd8_053Fu-pP-TN8YzQYpKs" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="canonical" href="https://kautomotivedetailing.co.uk/">
+    <meta property="og:title" content="K.AutomotiveDetailing | Mobile Car Detailing Derby">
+<meta property="og:description" content="Mobile interior, exterior and full car detailing in Derby.">
+<meta property="og:url" content="https://kautomotivedetailing.co.uk/">
+<meta property="og:type" content="website">
+</head>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    background: black
-
-
-
-
-    ;
-    color: white;
-    font-family: georgia
-
-
-
-}
-
-/* NAVIGATION BAR */
-
-header {
-    background: #111;
-    padding: 25px 7%;
-    border-bottom: 1px solid silver
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: silver;
-    font-size: 35px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-nav ul li a {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: silver;
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: silver;
-    text-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* HOMEPAGE */
-
-.hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    background:
-    linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.45),
-        rgba(0, 0, 0, 0.75)
-    ),
-    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
-    center/cover no-repeat;
-}
-
-.hero h1 {
-    font-size: 76px;
-    color: white;
-    letter-spacing: 5px;
-    line-height: 1.15;
-    max-width: 1000px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-
-.hero h2 {
-    font-size: 21px;
-    font-weight: normal;
-    letter-spacing: 5px;
-    color: silver;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-.hero p {
-    color: #e0e0e0;
-    font-size: 18px;
-    max-width: 650px;
-    line-height: 1.9;
-    margin: 0 auto 40px;
-    letter-spacing: 0.5px;
-}
-/* BOOKING BUTTON */
-
-.button {
-    background: linear-gradient(135deg, #eeeeee, #999999);
-    color: #000;
-    padding: 16px 32px;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 14px;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.button:hover {
-    background: white;
-    box-shadow: 0 0 20px rgba(192, 192, 192, 0.6);
-    transform: translateY(-4px) scale(1.03);
-}
-
-/* SERVICES */
-
-.services {
-    padding: 90px 8%;
-    text-align: center;
-}
-
-.services h2,
-.about h2 {
-    color: silver;
-    font-size: 35px;
-    margin-bottom: 45px;
-}
-
-.service-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-.service-card {
-    background: linear-gradient(145deg, #181818, #080808);
-    border: 1px solid #555;
-    border-radius: 8px;
-    padding: 40px 25px;
-    width: 280px;
-    transition: 0.3s;
-}
-
-.service-card:hover {
-    border-color: silver;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(192, 192, 192, 0.18);
-}
-
-.service-card h3 {
-    color: silver;
-    font-size: 22px;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.service-card p {
-    color: #ccc;
-    font-size: 15px;
-    line-height: 1.8;
-    letter-spacing: 0.3px;
-}
-/* ABOUT */
-
-.about {
-    background: #111;
-    padding: 90px 15%;
-    text-align: center;
-}
-
-.about p {
-    color: #ccc;
-    font-size: 17px;
-    line-height: 1.9;
-    max-width: 750px;
-    margin: 0 auto 20px;
-    overflow-wrap: anywhere;
-}
-
-/* CONTACT */
-.contact {
-    padding: 100px 20px;
-    text-align: center;
-    background: #080808;
-}
-
-.contact h2 {
-    color: silver;
-    font-size: 32px;
-    margin-bottom: 25px;
-}
-
-.contact p {
-    color: #ccc;
-    font-size: 17px;
-    line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto 35px;
-}
-/* FOOTER */
-
-footer {
-    background: #080808;
-    padding: 45px 20px;
-    text-align: center;
-    border-top: 1px solid #444;
-}
-
-.footer-content h3 {
-    color: silver;
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.footer-content p {
-    color: #999;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.footer-content .copyright {
-    margin-top: 25px;
-    font-size: 12px;
-    color: #666;
-}
-
-
-/* MOBILE FRIENDLY */
-
-@media (max-width: 768px) {
-
-    header {
-        width: 100%;
-        padding: 20px 10px;
-    }
-
-    .logo img {
-        width: 180px;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 20px;
-    }
-
-    .logo {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        font-size: 22px;
-        letter-spacing: 1px;
-        text-align: center;
-        overflow-wrap: anywhere;
-        line-height: 1.4;
-    }
-
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 18px;
-        width: 100%;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-        letter-spacing: 2px;
-        line-height: 1.3;
-    }
-
-    .hero h2 {
-        font-size: 22px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .services {
-        padding: 60px 15px;
-    }
-
-    .service-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .about {
-        width: 100%;
-        padding: 60px 15px;
-        text-align: center;
-    }
-
-    .about h2 {
-        font-size: 23px;
-        line-height: 1.5;
-        letter-spacing: 0;
-        overflow-wrap: anywhere;
-    }
-
-    .about p {
-        text-align: center;
-        font-size: 16px;
-    }
-}
-
-/* LOGO IMAGE */
-
-.logo img {
-    width: 220px;
-    height: auto;
-    display: block;
-}/* BOOKING SECTION */
-
-/* BOOKING SECTION */
-
-.booking {
-    background: #111;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.booking h2 {
-    color: silver;
-    font-size: 36px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.booking p {
-    color: #ccc;
-    font-size: 17px;
-    margin-bottom: 45px;
-}
-
-#booking-form {
-    max-width: 750px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-    background: #080808;
-    padding: 35px;
-    border: 1px solid #444;
-    border-radius: 10px;
-}
-
-#booking-form input,
-#booking-form select,
-#booking-form textarea {
-    width: 100%;
-    padding: 17px;
-    background: #181818;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-#booking-form textarea {
-    grid-column: span 2;
-    min-height: 120px;
-    resize: vertical;
-}
-
-#booking-form button {
-    grid-column: span 2;
-    padding: 18px;
-    cursor: pointer;
-}
-
-/* MOBILE BOOKING */
-
-@media (max-width: 768px) {
-
-    .booking {
-        padding: 65px 15px;
-    }
-
-    .booking h2 {
-        font-size: 27px;
-    }
-
-    #booking-form {
-        grid-template-columns: 1fr;
-        padding: 22px;
-        gap: 18px;
-    }
-
-    #booking-form textarea,
-    #booking-form button {
-        grid-column: span 1;
-    }
-
-}/* BOOKING FORM - MOBILE FIX */
-
-@media (max-width: 768px) {
-
-    .booking {
-        padding: 55px 18px;
-        width: 100%;
-    }
-
-    .booking h2 {
-        font-size: 27px;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
-    .booking p {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 30px;
-    }
-
-    #booking-form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        padding: 20px;
-        gap: 18px;
-        margin: auto;
-    }
-
-    #booking-form input,
-    #booking-form select,
-    #booking-form textarea {
-        width: 100%;
-        min-width: 0;
-        padding: 15px;
-        font-size: 16px;
-        min-height: 52px;
-    }
-
-    #booking-form textarea {
-        min-height: 110px;
-    }
-
-    #booking-form button {
-        width: 100%;
-        padding: 17px 10px;
-        font-size: 13px;
-    }
-
-}/* BOOKING CONFIRMATION */
-
-#booking-status {
-    color: silver;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-top: 15px;
-    text-align: center;
-}/* PRICING SECTION */
-
-.pricing {
-    background: #080808;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.pricing h2 {
-    color: silver;
-    font-size: 36px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.pricing-intro {
-    color: #ccc;
-    font-size: 17px;
-    margin-bottom: 55px;
-}
-
-.pricing-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-}
-
-.pricing-card {
-    background: #151515;
-    border: 1px solid #555;
-    border-radius: 10px;
-    padding: 40px 25px;
-    flex: 1;
-    max-width: 360px;
-    display: flex;
-    flex-direction: column;
-}
-
-.pricing-card h3 {
-    color: silver;
-    font-size: 21px;
-    letter-spacing: 1px;
-}
-
-.pricing-card h4 {
-    color: white;
-    font-size: 42px;
-    margin: 20px 0;
-}
-
-.pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 30px;
-    text-align: left;
-    flex-grow: 1;
-}
-
-.pricing-card li {
-    color: #ccc;
-    padding: 12px 0;
-    border-bottom: 1px solid #333;
-}
-
-.pricing-card li::before {
-    content: "✓";
-    color: silver;
-    margin-right: 10px;
-}
-
-.pricing-card .button {
-    display: inline-block;
-    text-decoration: none;
-}
-
-.pricing-card.popular {
-    border: 2px solid silver;
-    transform: scale(1.04);
-}
-
-.popular-label {
-    color: silver;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.pricing-note {
-    color: #999;
-    font-size: 14px;
-    margin-top: 40px;
-}/* PRICING MOBILE RESPONSIVENESS */
-
-@media (max-width: 768px) {
-
-    .pricing {
-        padding: 60px 18px;
-    }
-
-    .pricing h2 {
-        font-size: 28px;
-    }
-
-    .pricing-intro {
-        font-size: 15px;
-        margin-bottom: 35px;
-    }
-
-    .pricing-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
+<body>
 
-    .pricing-card {
-        width: 100%;
-        max-width: 400px;
-        padding: 30px 22px;
-    }
-
-    .pricing-card.popular {
-        transform: none;
-    }
-
-    .pricing-card h4 {
-        font-size: 36px;
-    }
-
-    .pricing-note {
-        line-height: 1.6;
-    }
-}/* PAYMENT SECTION */
-
-.payment {
-    background: #111;
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.payment h2 {
-    color: silver;
-    font-size: 32px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.payment > p {
-    color: #ccc;
-    margin-bottom: 30px;
-}
-
-.payment-methods {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.payment-card {
-    background: #080808;
-    border: 1px solid #555;
-    border-radius: 8px;
-    padding: 30px;
-    flex: 1;
-}
-
-.payment-card h3 {
-    color: silver;
-    margin-bottom: 15px;
-}
-
-.payment-card p {
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.payment-note {
-    margin-top: 30px;
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .payment-methods {
-        flex-direction: column;
-    }
-
-    .payment h2 {
-        font-size: 26px;
-    }
-}/* CUSTOMER REVIEWS SECTION */
-
-.reviews {
-    background: #080808;
-    padding: 90px 20px;
-    text-align: center;
-}
-
-.reviews h2 {
-    color: silver;
-    font-size: 36px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.reviews-intro {
-    color: #ccc;
-    font-size: 17px;
-    margin-bottom: 50px;
-}
-
-.reviews-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.review-card {
-    background: #151515;
-    border: 1px solid #555;
-    border-radius: 10px;
-    padding: 35px 25px;
-    flex: 1;
-    min-width: 250px;
-    max-width: 340px;
-}
-
-.review-stars {
-    color: silver;
-    font-size: 24px;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-}
-
-.review-card h3 {
-    color: silver;
-    font-size: 19px;
-    margin-bottom: 15px;
-}
-
-.review-card p {
-    color: #ccc;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-/* MOBILE REVIEWS */
-
-@media (max-width: 768px) {
-    .reviews {
-        padding: 60px 18px;
-    }
-
-    .reviews h2 {
-        font-size: 27px;
-    }
-
-    .reviews-intro {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .reviews-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .review-card {
-        width: 100%;
-        max-width: 400px;
-    }
-}/* GOOGLE REVIEW BUTTON */
-
-.google-review-button {
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 20px;
-}
-
-.google-review-button .button {
-    padding: 18px 35px;
-    font-size: 15px;
-    letter-spacing: 2px;
-}/* FADE IN ANIMATIONS */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}/* PREMIUM CARD ANIMATIONS */
-
-.service-card,
-.pricing-card,
-.review-card,
-.payment-card {
-    transition: transform 0.35s ease, border-color 0.35s ease,
-                box-shadow 0.35s ease;
-}
-
-.service-card:hover,
-.pricing-card:hover,
-.review-card:hover,
-.payment-card:hover {
-    transform: translateY(-8px);
-    border-color: silver;
-    box-shadow: 0 8px 25px rgba(192, 192, 192, 0.12);
-}/* ANIMATED HERO HEADING */
-
-.hero h1 {
-    animation: silverGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes silverGlow {
-    from {
-        text-shadow: 0 0 5px rgba(192, 192, 192, 0.2);
-    }
-
-    to {
-        text-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
-    }
-}/* BACK TO TOP BUTTON */
-
-#back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    border: 1px solid silver;
-    border-radius: 50%;
-    background: #151515;
-    color: silver;
-    font-size: 26px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-    z-index: 1000;
-}
-
-#back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-#back-to-top:hover {
-    background: silver;
-    color: black;
-    transform: translateY(-5px);
-}
-/* MOBILE BUTTON ADJUSTMENT */
-@media (max-width: 600px) {
-    #back-to-top {
-        width: 42px;
-        height: 42px;
-        bottom: 15px;
-        right: 15px;
-        font-size: 22px;
-    }
-}/* KEYBOARD ACCESSIBILITY */
-button:focus-visible,
-a:focus-visible {
-    outline: 3px solid silver;
-    outline-offset: 4px;
-}/* REDUCED MOTION ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-    }
-}/* HERO BUTTON LAYOUT */
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.hero-buttons .button {
-    min-width: 200px;
-    padding: 18px 28px;
-}
-
-/* SECONDARY HERO BUTTON */
-
-.secondary-button {
-    background: transparent;
-    color: white;
-    border: 1px solid silver;
-}
-
-.secondary-button:hover {
-    background: silver;
-    color: black;
-}/* HERO LABEL */
-
-.hero-label {
-    display: block;
-    color: silver;
-    font-size: 13px;
-    letter-spacing: 4px;
-    margin-bottom: 18px;
-    font-weight: bold;
-}
-
-/* SILVER ACCENT LINE */
-
-.hero-line {
-    width: 65px;
-    height: 3px;
-    background: silver;
-    margin: 0 auto 25px;
-}/* HERO CONTENT WIDTH */
-
-.hero-content {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}/* MOBILE HERO ADJUSTMENTS */
-@media (max-width: 600px) {
-    .hero {
-        min-height: 80vh;
-        padding: 80px 18px;
-    }
-
-    .hero-label {
-        font-size: 10px;
-        letter-spacing: 2px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-        letter-spacing: 2px;
-    }
-
-    .hero h2 {
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .hero-buttons .button {
-        width: 100%;
-        max-width: 280px;
-    }
-}/* MOBILE HERO SPACING */
-@media (max-width: 600px) {
-    .hero-line {
-        margin-bottom: 20px;
-    }
-
-    .hero h1 {
-        line-height: 1.2;
-        margin-bottom: 18px;
-    }
-
-    .hero h2 {
-        margin-bottom: 18px;
-    }
-
-    .hero p {
-        line-height: 1.7;
-        margin-bottom: 28px;
-    }
-}/* PREMIUM SERVICE CARD ACCENT */
-.service-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, silver, transparent);
-}/* SERVICE CARD LAYOUT */
-.service-card {
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}/* VEHICLE PHOTO UPLOAD */
-
-#booking-form label[for="vehicle-photos"] {
-    grid-column: span 2;
-    color: silver;
-    font-size: 15px;
-    text-align: left;
-    margin-bottom: -15px;
-}
-
-#booking-form input[type="file"] {
-    grid-column: span 2;
-    background: #181818;
-    color: #ccc;
-    border: 1px solid #777;
-    border-radius: 5px;
-    padding: 15px;
-    cursor: pointer;
-}
-
-.upload-note {
-    grid-column: span 2;
-    color: #999 !important;
-    font-size: 13px !important;
-    line-height: 1.6;
-    text-align: left;
-    margin-bottom: 0 !important;
-}/* MOBILE PHOTO UPLOAD */
-
-@media (max-width: 768px) {
-    #booking-form label[for="vehicle-photos"] {
-        font-size: 14px;
-        margin-bottom: -8px;
-    }
-
-    #booking-form input[type="file"] {
-        width: 100%;
-        max-width: 100%;
-        padding: 12px;
-        font-size: 13px;
-    }
-
-    .upload-note {
-        font-size: 12px !important;
-    }
-}/* ABOUT SECTION ACCENT LINE */
-
-.about h2 {
-    position: relative;
-    margin-bottom: 35px;
-}
-
-.about h2::after {
-    content: "";
-    display: block;
-    width: 65px;
-    height: 3px;
-    background: silver;
-    margin: 20px auto 0;
-}html {
-    scroll-behavior: smooth;
-}/* INTERACTIVE PRICE SELECTOR */
-
-.price-selector {
-    background: #111;
-    padding: 80px 10%;
-    text-align: center;
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
-}
-
-.price-selector h2 {
-    font-size: 32px;
-    color: silver;
-    margin-bottom: 15px;
-}
-
-.price-selector > p {
-    color: #ccc;
-    margin-bottom: 35px;
-}
-
-.price-selector label {
-    display: block;
-    color: silver;
-    margin: 20px auto 10px;
-    text-align: left;
-    max-width: 500px;
-}
-
-.price-selector select {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 15px;
-    background: #222;
-    color: white;
-    border: 1px solid silver;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-#price-result {
-    margin: 35px auto;
-    padding: 25px;
-    max-width: 500px;
-    background: #1c1c1c;
-    border: 1px solid silver;
-    border-radius: 8px;
-}
-
-#price-result h3 {
-    color: silver;
-    margin-bottom: 12px;
-}
-
-#price-result p {
-    color: white;
-    font-size: 22px;
-}
-
-#use-package {
-    cursor: pointer;
-}/* VEHICLE SELECTION CARDS */
-
-.vehicle-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    max-width: 750px;
-    margin: 25px auto;
-}
-
-.vehicle-card {
-    background: #1c1c1c;
-    border: 1px solid #777;
-    border-radius: 8px;
-    padding: 18px 10px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.vehicle-card img {
-    width: 100%;
-    max-width: 150px;
-    height: 75px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-.vehicle-card span {
-    display: block;
-    font-size: 14px;
-}
-
-.vehicle-card:hover,
-.vehicle-card.selected {
-    border-color: silver;
-    background: #333;
-    box-shadow: 0 0 12px rgba(192, 192, 192, 0.25);
-    transform: translateY(-3px);
-}
-
-@media (max-width: 600px) {
-    .vehicle-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-}.price-selector select[hidden] {
-    display: none;
-}
-/* CUSTOM BOOKING CALENDAR */
-
-#booking-calendar {
-    max-width: 420px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #1c1c1c;
-    border: 1px solid #777;
-    border-radius: 10px;
-    color: white;
-}
+    <!-- NAVIGATION -->
+<header>
+        <nav>
+            <a class="logo" href="#home">
+    <img src="images/logo.png" alt="K.AutomotiveDetailing logo">
+</a>
 
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.calendar-header button {
-    background: #333;
-    color: white;
-    border: 1px solid #777;
-    padding: 8px 12px;
-    cursor: pointer;
-}
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#booking">Enquiries</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-    text-align: center;
-}
-
-.calendar-day {
-    padding: 10px 2px;
-    font-size: 13px;
-}
+    <!-- HOMEPAGE -->
+   <section class="hero" id="home">
 
-.calendar-date {
-    min-height: 42px;
-    border: 1px solid #777;
-    background: #292929;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    <div class="hero-content">
 
-.calendar-date.booked {
-    background: #542626;
-    color: #ffbaba;
-    border-color: #a44;
-    cursor: not-allowed;
-    font-size: 10px;
-}
+        <span class="hero-label">DERBY • MOBILE AUTOMOTIVE DETAILING</span>
 
-.calendar-date.selected {
-    border: 2px solid white;
-    background: #555;
-}
+        <div class="hero-line"></div>
 
-.calendar-date:disabled {
-    opacity: 0.8;
-}
+        <h1>PRECISION IN<br>EVERY DETAIL.</h1>
 
-.calendar-legend {
-    margin-top: 18px;
-    font-size: 12px;
-    text-align: center;
-}/* DATE PICKER LAYOUT FIX */
-
-#date {
-    grid-column: 1 / -1;
-    width: 100%;
-    min-height: 52px;
-    cursor: pointer;
-}
+        <h2>PREMIUM AUTOMOTIVE DETAILING</h2>
 
-#booking-calendar {
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto 15px;
-    display: none;
-}
+        <p>
+            Exceptional attention to detail.
+            Convenient mobile vehicle care, brought directly to your door.
+        </p>
 
-#booking-calendar .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
+        <div class="hero-buttons">
+            <a href="#services" class="button">EXPLORE SERVICES</a>
+
+            <a href="#contact" class="button secondary-button">GET IN TOUCH</a>
+        </div>
+
+    </div>
+
+</section>
 
-#booking-calendar .calendar-header button {
-    min-width: 40px;
-    min-height: 40px;
-}
+   <!-- SERVICES -->
+<section class="services" id="services">
 
-#booking-calendar .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-}
+    <h2>OUR DETAILING SERVICES</h2>
+
+    <p class="services-intro">
+        Professional mobile car detailing in Derby, with careful attention
+        to every detail. Choose the service that suits your vehicle.
+    </p>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <h3>Interior Detailing</h3>
+
+            <p>
+                Give your vehicle's interior a thorough refresh.
+                From carpets and seats to dashboards, door panels
+                and interior glass, we focus on the areas that
+                make your car feel clean and comfortable.
+            </p>
+
+            <a href="#pricing" class="button">VIEW PRICING</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Exterior Detailing</h3>
 
-#booking-calendar .calendar-date {
-    width: 100%;
-    min-height: 42px;
-    padding: 5px;
-}/* FIX CALENDAR BUTTON LAYOUT */
-#booking-calendar button {
-    grid-column: auto !important;
-    padding: 5px;
-}
+            <p>
+                Refresh your vehicle's exterior with a careful
+                pre-wash, safe hand wash and attention to the
+                wheels, tyres, glass and finishing touches.
+            </p>
 
-#booking-calendar .calendar-header button {
-    padding: 8px 12px;
-}
+            <a href="#pricing" class="button">VIEW PRICING</a>
+        </div>
 
-#booking-calendar .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-}
+        <div class="service-card">
+            <h3>Full Detailing</h3>
 
-#booking-calendar .calendar-date {
-    min-width: 0;
-    width: 100%;
-}/* RED UNAVAILABLE BOOKING DAYS */
-#booking-calendar .calendar-grid button.calendar-date:disabled {
-    background-color: #c0392b !important;
-    color: white !important;
-    border: 1px solid #e74c3c !important;
-    opacity: 1 !important;
-    cursor: not-allowed;
-}/* BLACK & CHAMPAGNE GOLD BRAND THEME */
-
-:root {
-    --accent: #D6B56D;
-    --accent-dark: #9C7838;
-    --background: #080B09;
-    --card-background: #171C19;
-    --text: #FFFFFF;
-}
+            <p>
+                Bring both sides of your vehicle together with
+                our interior and exterior detailing services.
+                A complete refresh, with attention to the details
+                inside and out.
+            </p>
 
-/* Navigation */
-header {
-    border-bottom: 1px solid var(--accent);
-}
+            <a href="#pricing" class="button">VIEW PRICING</a>
+        </div>
 
-.logo {
-    color: var(--accent);
-}
+    </div>
 
-nav ul li a:hover {
-    color: var(--accent);
-    text-shadow: 0 0 8px rgba(214, 181, 109, 0.5);
-}
+</section>
+<!-- PRICING SECTION -->
 
-nav ul li a::after {
-    background: var(--accent);
-}
+<section class="pricing" id="pricing">
 
-/* Headings */
-.services h2,
-.about h2,
-.hero h2 {
-    color: var(--accent);
-}
+    <h2>OUR PRICING</h2>
 
-/* Buttons */
-.button {
-    background: linear-gradient(135deg, #D6B56D, #9C7838);
-    color: white;
-    border: 1px solid var(--accent);
-}
+    <p class="pricing-intro">
+        Professional mobile detailing at competitive prices.
+    </p>
 
-.button:hover {
-    background: var(--accent);
-    color: #080B09;
-    box-shadow: 0 0 20px rgba(214, 181, 109, 0.4);
-}
+    <div class="pricing-container">
+
+        <div class="pricing-card">
+            <h3>INTERIOR DETAILING</h3>
+            <h4>£40</h4>
+
+            <ul>
+                <li>Full interior vacuum</li>
+                <li>Seats and carpets cleaned</li>
+                <li>Dashboard and console cleaned</li>
+                <li>Door panels and pockets cleaned</li>
+                <li>Cup holders and storage areas cleaned</li>
+                <li>Interior windows cleaned</li>
+                <li>Floor mats cleaned</li>
+            </ul>
+
+            <a href="#booking" class="button">BOOK NOW</a>
+        </div>
+
+        <div class="pricing-card">
+            <h3>EXTERIOR DETAILING</h3>
+            <h4>£35</h4>
+
+            <ul>
+                <li>Exterior pre-wash</li>
+                <li>Wheel and tyre cleaning</li>
+                <li>Safe hand wash</li>
+                <li>Door shuts cleaned</li>
+                <li>Exterior windows cleaned</li>
+                <li>Microfibre towel drying</li>
+                <li>Tyre dressing</li>
+            </ul>
+
+            <a href="#booking" class="button">BOOK NOW</a>
+        </div>
+
+        <div class="pricing-card popular">
+            <span class="popular-label">MOST POPULAR</span>
+
+            <h3>FULL DETAILING</h3>
+            <h4>£65</h4>
+
+            <ul>
+                <li>Everything in Interior Detailing</li>
+                <li>Everything in Exterior Detailing</li>
+                <li>Complete interior refresh</li>
+                <li>Complete exterior wash</li>
+                <li>Interior and exterior glass</li>
+                <li>Full vehicle inspection</li>
+            </ul>
 
-/* Service cards */
-.service-card h3 {
-    color: var(--accent);
-}
+            <a href="#booking" class="button">BOOK NOW</a>
+        </div>
+
+    </div>
 
-.service-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 12px 30px rgba(214, 181, 109, 0.18);
-}
+    <p class="pricing-note">
+        Prices are starting prices. Larger vehicles and heavily soiled
+        vehicles may require an additional charge.
+    </p>
 
-/* About section */
-.about {
-    background: #101713;
-}/* PREMIUM GOLD PRICING DESIGN */
+</section>
+<!-- INTERACTIVE PRICE SELECTOR -->
 
-.pricing h2 {
-    color: #D6B56D;
-}
+<section class="price-selector" id="price-selector">
+
+    <h2>BUILD YOUR DETAILING PACKAGE</h2>
 
-.pricing-card {
-    border: 1px solid #444;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
+    <p>Choose your service and vehicle to see the starting price.</p>
 
-.pricing-card h3 {
-    color: #D6B56D;
-}
+    <label for="package-choice">Choose Your Service</label>
+    <select id="package-choice">
+        <option value="">Select a package</option>
+        <option value="Interior Detailing">Interior Detailing</option>
+        <option value="Exterior Detailing">Exterior Detailing</option>
+        <option value="Full Detailing">Full Detailing</option>
+    </select>
 
-.pricing-card h4 {
-    color: #D6B56D;
-}
+    <label>Choose Your Vehicle</label>
 
-.pricing-card li::before {
-    color: #D6B56D;
-}
+<div class="vehicle-grid">
 
-.pricing-card:hover {
-    border-color: #D6B56D;
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(214, 181, 109, 0.12);
-}
+    <button type="button" class="vehicle-card" data-vehicle="Small Car">
+       <img src="images/small-car.png" alt="Small car">
+        <span>Small Car</span>
+    </button>
 
-/* Highlight the full detailing package */
-.pricing-card.popular {
-    border: 2px solid #D6B56D;
-    box-shadow: 0 0 20px rgba(214, 181, 109, 0.12);
-}
+    <button type="button" class="vehicle-card" data-vehicle="Hatchback">
+       <img src="images/hatchback.png" alt="Hatchback">
+        <span>Hatchback</span>
+    </button>
 
-.popular-label {
-    color: #D6B56D;
-}/* IMPROVE SERVICES INTRO SPACING */
-
-.services-intro {
-    margin-bottom: 70px;
-}/* SPACE ABOVE SERVICE CARDS */
-.services .service-container {
-    margin-top: 60px !important;
-}@media (max-width: 768px) {
-    .service-card {
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-}/* MOBILE SERVICE CARD CONTENT CENTRING */
-@media (max-width: 768px) {
-    .service-card {
-        display: grid;
-        align-content: center;
-        text-align: center;
-    }
-}/* MOBILE SERVICES SECTION SPACING */
-@media (max-width: 768px) {
-    .services h2 {
-        margin-bottom: 25px;
-    }
+    <button type="button" class="vehicle-card" data-vehicle="Saloon">
+        <img src="images/saloon.png" alt="Saloon">
+        <span>Saloon</span>
+    </button>
 
-    .services-intro {
-        margin: 0 auto 30px;
-    }
+    <button type="button" class="vehicle-card" data-vehicle="Estate">
+        <img src="images/estate.png" alt="Estate car">
+        <span>Estate</span>
+    </button>
+
+    <button type="button" class="vehicle-card" data-vehicle="SUV">
+        <img src="images/suv.png" alt="SUV">
+        <span>SUV</span>
+    </button>
+
+    <button type="button" class="vehicle-card" data-vehicle="4x4">
+     <img src="images/4x4.png" alt="4x4 vehicle">
+        <span>4x4</span>
+    </button>
+
+    <button type="button" class="vehicle-card" data-vehicle="Van">
+      <img src="images/van.png" alt="Van">
+        <span>Van</span>
+    </button>
+
+</div>
+
+<select id="vehicle-choice" hidden>
+    <option value="">Select your vehicle</option>
+    <option value="Small Car">Small Car</option>
+    <option value="Hatchback">Hatchback</option>
+    <option value="Saloon">Saloon</option>
+    <option value="Estate">Estate</option>
+    <option value="SUV">SUV</option>
+    <option value="4x4">4x4</option>
+    <option value="Van">Van</option>
+</select>
+
+    <div id="price-result">
+        <h3>Your Starting Price</h3>
+        <p>Select your options above.</p>
+    </div>
+
+    <button type="button" id="use-package" class="button">
+        CONTINUE TO ENQUIRY
+    </button>
+
+</section>
+<!-- PAYMENT INFORMATION -->
+
+<section class="payment">
+
+    <h2>PAYMENT INFORMATION</h2>
+
+    <p>We currently accept the following payment methods:</p>
 
-    .services .service-container {
-        margin-top: 0 !important;
-    }
-}
+    <div class="payment-methods">
+
+        <div class="payment-card">
+            <h3>💷 CASH</h3>
+            <p>Pay in person once your detailing service is complete.</p>
+        </div>
+
+        <div class="payment-card">
+            <h3>🏦 BANK TRANSFER</h3>
+            <p>Pay securely by bank transfer once your detailing service is complete.</p>
+        </div>
+
+    </div>
+
+    <p class="payment-note">
+        All prices are agreed with customers before work begins.
+    </p>
+
+</section>
+
+<!-- OUR APPROACH -->
+<section class="reviews" id="reviews">
+
+    <h2>OUR APPROACH</h2>
+
+    <p class="reviews-intro">
+        Our goal is to make every vehicle detailing experience
+        straightforward, careful and convenient.
+    </p>
+
+    <div class="reviews-container">
+
+        <div class="review-card">
+            <h3>ATTENTION TO DETAIL</h3>
+            <p>
+                We aim to give every area of your vehicle
+                the care and attention it deserves.
+            </p>
+        </div>
+
+        <div class="review-card">
+            <h3>CLEAR COMMUNICATION</h3>
+            <p>
+                We believe in clear pricing, honest communication
+                and agreeing the work before it begins.
+            </p>
+        </div>
+
+        <div class="review-card">
+            <h3>CARE AND RESPECT</h3>
+            <p>
+                Our aim is to treat every vehicle with care
+                and approach every job professionally.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="google-review-button">
+    <a href="https://g.page/r/CeWnXYywvIUnEBM/review"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="button">
+        LEAVE US A GOOGLE REVIEW
+    </a>
+</div>
+   <!-- ABOUT -->
+<section class="about" id="about">
+
+    <h2>ABOUT K.AUTOMOTIVEDETAILING</h2>
+
+    <p>
+        At K.AutomotiveDetailing, we're passionate about cars
+        and the difference that attention to detail can make.
+        Based in Derby, we're preparing to bring convenient
+        mobile automotive detailing directly to our customers.
+
+        Our goal is to provide reliable, carefully delivered
+        vehicle care with clear pricing, honest communication
+        and a professional approach. Whether you choose an
+        interior, exterior or full detail, every vehicle will
+        be treated with care and attention.
+    </p>
+
+</section>
+
+    <!-- CONTACT -->
+     <!-- BOOKING SECTION -->
+
+<section class="booking" id="booking">
+
+    <h2>MAKE AN ENQUIRY</h2>
+
+   <p>Interested in our detailing services? Send us an enquiry and we'll be happy to discuss your requirements.</p>
+
+    <form id="booking-form">
+
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="registration" placeholder="Vehicle Registration" required>
+
+        <input type="text" id="vehicle" placeholder="Vehicle Make & Model" required>
+        <input type="text" id="address" placeholder="Vehicle Location (Street, Town & Postcode)" required>
+        <select id="vehicle-type" required>
+    <option value="">Choose Vehicle Type</option>
+    <option>Small Car</option>
+    <option>Hatchback</option>
+    <option>Saloon</option>
+    <option>Estate</option>
+    <option>SUV</option>
+    <option>4x4</option>
+    <option>Van</option>
+    <option>Other</option>
+</select>
+
+        <select id="service" required>
+            <option value="">Choose a Service</option>
+            <option>Interior Detailing</option>
+            <option>Exterior Detailing</option>
+            <option>Full Detailing</option>
+        </select>
+
+        <input type="text" id="date" placeholder="Choose a date" readonly required>
+<div id="booking-calendar"></div>
+
+        <select id="time" required>
+            <option value="">Preferred Time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+        </select>
+
+        <textarea id="message" placeholder="Additional Information"></textarea>
+      
+
+        <button type="submit" class="button">SEND ENQUIRY</button>
+        <p id="booking-status"></p>
+
+    </form>
+
+</section>
+
+    <section class="contact" id="contact">
+    <h2>READY TO TRANSFORM YOUR VEHICLE?</h2>
+
+    <p>
+        Looking for professional mobile car detailing in Derby or surrounding areas?
+        Get in touch with K.AutomotiveDetailing today.
+    </p>
+
+    <a href="https://wa.me/447947602239?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20your%20detailing%20services."
+       class="button"
+       target="_blank"
+       rel="noopener noreferrer">
+        MESSAGE US ON WHATSAPP
+    </a>
+</section>
+
+    <footer>
+    <div class="footer-content">
+        <h3>K.AUTOMOTIVEDETAILING</h3>
+
+        <p>Premium Mobile Automotive Detailing</p>
+
+        <p>Based in Derby | Serving surrounding areas</p>
+
+        <p class="copyright">
+            © 2026 K.AutomotiveDetailing. All rights reserved.
+        </p>
+    </div>
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" title="Back to Top">
+    ↑
+</button>
+</footer>
+<script>
+// CUSTOM BOOKING CALENDAR
+
+const dateInput = document.getElementById("date");
+const calendar = document.getElementById("booking-calendar");
+
+let calendarDate = new Date();
+let selectedDate = null;
+
+calendar.style.display = "none";
+
+function renderCalendar() {
+    calendar.innerHTML = "";
+
+    const year = calendarDate.getFullYear();
+    const month = calendarDate.getMonth();
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const header = document.createElement("div");
+    header.className = "calendar-header";
+
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.textContent = "‹";
+    previous.onclick = () => {
+        calendarDate.setMonth(calendarDate.getMonth() - 1);
+        renderCalendar();
+    };
+
+    const title = document.createElement("strong");
+    title.textContent = calendarDate.toLocaleDateString("en-GB", {
+        month: "long",
+        year: "numeric"
+    });
+
+    const next = document.createElement("button");
+    next.type = "button";
+    next.textContent = "›";
+    next.onclick = () => {
+        calendarDate.setMonth(calendarDate.getMonth() + 1);
+        renderCalendar();
+    };
+
+    header.append(previous, title, next);
+    calendar.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "calendar-grid";
+
+    ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+        const label = document.createElement("div");
+        label.className = "calendar-day";
+        label.textContent = day;
+        grid.appendChild(label);
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+        grid.appendChild(document.createElement("div"));
+    }
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 90);
+    maxDate.setHours(0, 0, 0, 0);
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "calendar-date";
+        button.textContent = day;
+
+        const weekday = date.getDay();
+
+        if (
+            date < today ||
+            date > maxDate ||
+            [1, 3, 4].includes(weekday)
+        ) {
+            button.disabled = true;
+        }
+
+        if (
+            selectedDate &&
+            date.toDateString() === selectedDate.toDateString()
+        ) {
+            button.classList.add("selected");
+        }
+
+        button.addEventListener("click", () => {
+            selectedDate = date;
+
+            dateInput.value =
+    date.getFullYear() + "-" +
+    String(date.getMonth() + 1).padStart(2, "0") + "-" +
+    String(date.getDate()).padStart(2, "0");
+
+            calendar.style.display = "none";
+            renderCalendar();
+        });
+
+        grid.appendChild(button);
+    }
+
+    calendar.appendChild(grid);
+}
+
+dateInput.addEventListener("click", () => {
+    calendar.style.display =
+        calendar.style.display === "none" ? "block" : "none";
+
+    renderCalendar();
+});
+
+renderCalendar();
+document.getElementById("booking-form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+    const bookingReference = "KAD-" +
+    Date.now().toString().slice(-6) + "-" +
+    Math.floor(100 + Math.random() * 900);
+
+    const name = document.getElementById("name").value;
+    const vehicle = document.getElementById("vehicle").value;
+    const vehicleType = document.getElementById("vehicle-type").value;
+    const registration = document.getElementById("registration").value;
+    const address = document.getElementById("address").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const message = document.getElementById("message").value;
+
+    const bookingMessage =
+    "Hi, I'd like to request a car detailing booking.\n\n" +
+    "Booking Reference: " + bookingReference + "\n" +
+        "Name: " + name + "\n" +
+        "Vehicle: " + vehicle + "\n" +
+    "Vehicle Type: " + vehicleType + "\n" +
+    "Registration: " + registration + "\n" +
+    "Vehicle Location: " + address + "\n" +
+    "Service: " + service + "\n" +
+    "Preferred Date: " + date + "\n" +
+    "Preferred Time: " + time + "\n" +
+    "Additional Information: " + message + "\n\n" +
+"Please remember to attach your vehicle photos to this WhatsApp message if you have any.";
+
+    const whatsappURL = "https://wa.me/447947602239?text=" + encodeURIComponent(bookingMessage);
+
+    document.getElementById("booking-status").textContent =
+"Your enquiry reference is " + bookingReference +
+". Please send the WhatsApp message to complete your enquiry. We will respond when we're ready to discuss your requirements.";
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+<script>
+const animatedSections = document.querySelectorAll(
+    ".services, .pricing, .payment, .reviews, .about, .booking, .contact"
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in", "visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+animatedSections.forEach((section) => {
+    section.classList.add("fade-in");
+    observer.observe(section);
+});// BACK TO TOP BUTTON
+
+const backToTopButton = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add("show");
+    } else {
+        backToTopButton.classList.remove("show");
+    }
+});
+
+backToTopButton.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});// INTERACTIVE PRICE SELECTOR
+
+const packageChoice = document.getElementById("package-choice");
+const vehicleChoice = document.getElementById("vehicle-choice");
+const priceResult = document.getElementById("price-result");
+const usePackageButton = document.getElementById("use-package");
+
+const startingPrices = {
+    "Interior Detailing": 40,
+    "Exterior Detailing": 35,
+    "Full Detailing": 65
+};
+
+function updatePrice() {
+    const selectedPackage = packageChoice.value;
+    const selectedVehicle = vehicleChoice.value;
+
+    if (!selectedPackage || !selectedVehicle) {
+        priceResult.innerHTML = `
+            <h3>Your Starting Price</h3>
+            <p>Select your service and vehicle above.</p>
+        `;
+        return;
+    }
+
+    const price = startingPrices[selectedPackage];
+
+    priceResult.innerHTML = `
+        <h3>${selectedPackage}</h3>
+        <p>From £${price}</p>
+        <small>
+            Vehicle selected: ${selectedVehicle}. 
+            Larger vehicles and heavily soiled vehicles may cost extra.
+            Final price will be agreed before work begins.
+        </small>
+    `;
+}
+
+packageChoice.addEventListener("change", updatePrice);
+vehicleChoice.addEventListener("change", updatePrice);
+// VEHICLE CARD SELECTION
+
+const vehicleCards = document.querySelectorAll(".vehicle-card");
+
+vehicleCards.forEach(card => {
+    card.addEventListener("click", function() {
+
+        const selectedVehicle = this.dataset.vehicle;
+
+        vehicleChoice.value = selectedVehicle;
+
+        vehicleCards.forEach(item => {
+            item.classList.remove("selected");
+        });
+
+        this.classList.add("selected");
+
+        updatePrice();
+    });
+});
+
+usePackageButton.addEventListener("click", function() {
+    if (!packageChoice.value || !vehicleChoice.value) {
+        priceResult.innerHTML = `
+            <h3>Almost there!</h3>
+            <p>Please select both options first.</p>
+        `;
+        return;
+    }
+
+    document.getElementById("service").value = packageChoice.value;
+    document.getElementById("vehicle-type").value = vehicleChoice.value;
+
+    document.getElementById("booking").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+</script>
+</body>
+</html>
