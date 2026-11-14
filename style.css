@@ -1389,4 +1389,42 @@ nav ul li a::after {
 /* About section */
 .about {
     background: #101713;
+}/* PREMIUM GOLD PRICING DESIGN */
+
+.pricing h2 {
+    color: #D6B56D;
+}
+
+.pricing-card {
+    border: 1px solid #444;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.pricing-card h3 {
+    color: #D6B56D;
+}
+
+.pricing-card h4 {
+    color: #D6B56D;
+}
+
+.pricing-card li::before {
+    color: #D6B56D;
+}
+
+.pricing-card:hover {
+    border-color: #D6B56D;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(214, 181, 109, 0.12);
+}
+
+/* Highlight the full detailing package */
+.pricing-card.popular {
+    border: 2px solid #D6B56D;
+    box-shadow: 0 0 20px rgba(214, 181, 109, 0.12);
+}
+
+.popular-label {
+    color: #D6B56D;
 }
