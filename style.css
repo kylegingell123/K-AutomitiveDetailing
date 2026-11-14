@@ -9,7 +9,7 @@
 }
 
 body {
-    background: black
+    background: url("images/hero-background.png") center center / cover fixed no-repeat;
 
 
 
