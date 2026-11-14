@@ -1487,4 +1487,16 @@ nav ul li a::after {
 }.calendar-header button {
     border-color: #D6B56D;
     color: #D6B56D;
+}header,
+.hero,
+.services,
+.about,
+.contact,
+.booking,
+.pricing,
+.payment,
+.reviews,
+.price-selector,
+footer {
+    background: transparent !important;
 }
