@@ -1447,4 +1447,17 @@ nav ul li a::after {
         align-content: center;
         text-align: center;
     }
+}/* MOBILE SERVICES SECTION SPACING */
+@media (max-width: 768px) {
+    .services h2 {
+        margin-bottom: 25px;
+    }
+
+    .services-intro {
+        margin: 0 auto 30px;
+    }
+
+    .services .service-container {
+        margin-top: 0 !important;
+    }
 }
