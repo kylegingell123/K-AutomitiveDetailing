@@ -99,7 +99,7 @@ nav ul li a:hover::after {
         rgba(0, 0, 0, 0.45),
         rgba(0, 0, 0, 0.75)
     ),
-    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600")
+    url("images/hero-background.png")
     center/cover no-repeat;
 }
 
