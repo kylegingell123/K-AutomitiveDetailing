@@ -1505,4 +1505,33 @@ footer {
     background: #000000 !important;
 }html {
     background: #000000;
+}.customer-requirements {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #D6B56D;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    text-align: left;
+}
+
+.customer-requirements h3 {
+    color: #D6B56D;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.customer-requirements p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.customer-requirements ul {
+    padding-left: 25px;
+    line-height: 2;
+}
+
+.customer-requirements li::marker {
+    color: #D6B56D;
 }
