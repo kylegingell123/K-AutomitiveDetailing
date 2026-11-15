@@ -615,6 +615,8 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     const registration = document.getElementById("registration").value;
     const address = document.getElementById("address").value;
     const service = document.getElementById("service").value;
+    const water = document.getElementById("water-availability").value;
+const electricity = document.getElementById("electricity-availability").value;
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
     const message = document.getElementById("message").value;
@@ -628,6 +630,8 @@ document.getElementById("booking-form").addEventListener("submit", function(even
     "Registration: " + registration + "\n" +
     "Vehicle Location: " + address + "\n" +
     "Service: " + service + "\n" +
+    "Outdoor Water Tap: " + water + "\n" +
+"Electricity Socket: " + electricity + "\n" +
     "Preferred Date: " + date + "\n" +
     "Preferred Time: " + time + "\n" +
     "Additional Information: " + message + "\n\n" +
