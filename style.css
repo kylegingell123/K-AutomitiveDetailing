@@ -1534,4 +1534,7 @@ footer {
 
 .customer-requirements li::marker {
     color: #D6B56D;
+}.booking form .form-group {
+    grid-column: 1 / -1;
+    width: 100%;
 }
