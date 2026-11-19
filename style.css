@@ -1537,4 +1537,40 @@ footer {
 }.booking form .form-group {
     grid-column: 1 / -1;
     width: 100%;
+}/* SERVICES PAGE */
+.services-page {
+    background: #111;
+    color: white;
+    min-height: 100vh;
+    padding: 60px 8%;
+}
+
+.services-page h1 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.services-page .intro {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 850px;
+}
+
+.service-card h2 {
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #ccc;
+    line-height: 1.7;
 }
