@@ -1537,40 +1537,208 @@ footer {
 }.booking form .form-group {
     grid-column: 1 / -1;
     width: 100%;
-}/* SERVICES PAGE */
-.services-page {
-    background: #111;
-    color: white;
-    min-height: 100vh;
-    padding: 60px 8%;
+}/* =========================================
+   SERVICES PAGE
+========================================= */
+
+.services-body {
+    background: #080808;
+    color: #ffffff;
 }
 
-.services-page h1 {
-    font-size: 42px;
+/* Header and navigation */
+.services-body header {
+    width: 100%;
+    padding: 18px 6%;
+    background: #101010;
+    border-bottom: 1px solid #292929;
+}
+
+.services-body header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.services-body header nav img {
+    width: 145px;
+    height: auto;
+}
+
+.services-body header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.services-body header nav a:hover {
+    color: #d4af37;
+}
+
+/* Main page layout */
+.services-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+.services-page section {
+    padding: 75px 8%;
+}
+
+/* Hero section */
+.services-page .services-hero {
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    background: linear-gradient(135deg, #171717, #080808);
+}
+
+.services-page .services-hero h1 {
+    color: #d4af37;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    margin-bottom: 18px;
+}
+
+.services-page .services-hero p {
+    max-width: 700px;
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Section headings */
+.services-page h2 {
+    color: #d4af37;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Service packages */
+.services-page .services-packages {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-page .service-card {
+    background: #151515;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.services-page .service-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+}
+
+.services-page .service-card h3 {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.services-page .service-card p {
+    color: #cccccc;
+    line-height: 1.7;
     margin-bottom: 20px;
 }
 
-.services-page .intro {
+.services-page .service-card .price {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Why choose us */
+.services-page .why-choose-us {
+    background: #111111;
     text-align: center;
-    color: #ccc;
-    margin-bottom: 50px;
 }
 
-.service-card {
-    background: #1c1c1c;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 850px;
+.services-page .why-choose-us p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #cccccc;
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
 
-.service-card h2 {
-    margin-bottom: 12px;
+/* Enquiry call to action */
+.services-page .services-cta {
+    text-align: center;
+    background: linear-gradient(135deg, #171717, #080808);
 }
 
-.service-card p {
-    color: #ccc;
+.services-page .services-cta p {
+    color: #cccccc;
+    margin-bottom: 25px;
     line-height: 1.7;
+}
+
+.services-page .services-cta a {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #d4af37;
+    color: #080808;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.services-page .services-cta a:hover {
+    background: #f0cf62;
+}
+
+/* Footer */
+.services-body footer {
+    padding: 25px 6%;
+    background: #101010;
+    color: #aaaaaa;
+    text-align: center;
+    border-top: 1px solid #292929;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+    .services-page .services-packages {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .services-page section {
+        padding: 55px 6%;
+    }
+
+    .services-body header nav {
+        justify-content: center;
+    }
+
+    .services-body header nav a {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-body header nav img {
+        width: 120px;
+    }
+
+    .services-page .service-card {
+        padding: 28px 20px;
+    }
 }
