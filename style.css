@@ -2959,7 +2959,7 @@ footer {
     body {
         background-attachment: scroll;
         background-position: center top;
-        background-size: 100% auto;
+        background-size: auto 900px;
         background-repeat: repeat-y;
     }
 }
