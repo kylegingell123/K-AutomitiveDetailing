@@ -2954,12 +2954,45 @@ footer {
 
 }
 
-/* MOBILE BACKGROUND FIX */
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-        background-position: center top;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
+/* CONTINUOUS SITE BACKGROUND */
+html {
+    background: transparent !important;
+}
+
+body,
+body.services-body {
+    position: relative;
+    background: transparent !important;
+}
+
+/* Keep one background image behind the whole page while scrolling */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("images/hero-background.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Let the same background show through page sections */
+.hero,
+.services-page .services-hero,
+.services-page .why-choose-us,
+.services-page .services-cta,
+.services-body footer {
+    background: transparent !important;
+}
+
+/* The hero keeps its dark overlay, but uses the body image behind it */
+.hero {
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.65)
+    ) !important;
 }
