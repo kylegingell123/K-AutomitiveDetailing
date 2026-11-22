@@ -2995,4 +2995,7 @@ body::before {
         rgba(0, 0, 0, 0.25),
         rgba(0, 0, 0, 0.65)
     ) !important;
+}.form-group label {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
 }
