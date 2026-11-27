@@ -3138,4 +3138,14 @@ body::before {
 
 .comparison-slider {
     background: transparent;
+}@media (max-width: 600px) {
+    .comparison-slider {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+
+    .comparison-image {
+        object-fit: cover;
+        object-position: center;
+    }
 }
