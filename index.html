@@ -109,6 +109,51 @@
     </div>
 
 </section>
+
+<!-- INTERACTIVE BEFORE AND AFTER -->
+<section class="comparison-section" id="comparison">
+
+    <span class="comparison-kicker">THE DIFFERENCE</span>
+
+    <h2>SEE THE RESULTS</h2>
+
+    <p class="comparison-intro">
+        Drag the slider to compare a dirty panel with a clean finish.
+    </p>
+
+    <div class="comparison-slider" id="comparison-slider">
+
+        <img
+            src="images/before-demo.png"
+            class="comparison-image"
+            alt="Illustrative dirty vehicle panel">
+
+        <img
+            src="images/after-demo.png"
+            class="comparison-image comparison-after"
+            alt="Illustrative clean vehicle panel">
+
+        <span class="comparison-label before-label">BEFORE</span>
+        <span class="comparison-label after-label">AFTER</span>
+
+        <div class="comparison-divider">
+            <span>↔</span>
+        </div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="comparison-range"
+            aria-label="Drag to compare the before and after images">
+
+    </div>
+
+    <p class="comparison-disclaimer">
+        Illustrative demonstration — not a completed customer detail.
+    </p>
+</section>
 <!-- ABOUT -->
 <section class="about" id="about">
 
@@ -770,5 +815,26 @@ usePackageButton.addEventListener("click", function() {
     });
 });
 </script>
+
+<script>
+const comparison = document.getElementById("comparison-slider");
+const comparisonRange = comparison.querySelector(".comparison-range");
+const comparisonAfter = comparison.querySelector(".comparison-after");
+const comparisonDivider = comparison.querySelector(".comparison-divider");
+
+function updateComparison() {
+    const value = comparisonRange.value;
+
+    comparisonAfter.style.clipPath =
+        `inset(0 ${100 - value}% 0 0)`;
+
+    comparisonDivider.style.left = value + "%";
+}
+
+comparisonRange.addEventListener("input", updateComparison);
+
+updateComparison();
+</script>
+
 </body>
 </html>
