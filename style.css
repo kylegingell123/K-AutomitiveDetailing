@@ -3039,6 +3039,9 @@ body::before {
     margin: 0 auto;
     overflow: hidden;
     background: transparent;
+    border-radius: 18px;
+border: 1px solid rgba(212, 175, 55, 0.35);
+box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
 }
 
 .comparison-image {
@@ -3120,4 +3123,13 @@ body::before {
     .comparison-section h2 {
         font-size: 28px;
     }
+}
+.comparison-image {
+    border-radius: 18px;
+}.comparison-section {
+    background: transparent;
+}
+
+.comparison-slider {
+    background: transparent;
 }
