@@ -3007,3 +3007,116 @@ body::before {
 #booking-form .booking-note {
     align-self: center;
 }
+/* BEFORE AND AFTER SLIDER */
+.comparison-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+}
+
+.comparison-kicker {
+    color: #d4af37;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.comparison-section h2 {
+    margin: 15px 0;
+    font-size: 36px;
+}
+
+.comparison-intro {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.comparison-slider {
+    position: relative;
+    width: min(900px, 100%);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #222;
+}
+
+.comparison-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comparison-after {
+    clip-path: inset(0 50% 0 0);
+}
+
+.comparison-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 5;
+}
+
+.comparison-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: #d4af37;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 4;
+}
+
+.comparison-divider span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #111;
+    font-size: 24px;
+}
+
+.comparison-label {
+    position: absolute;
+    top: 15px;
+    padding: 8px 12px;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+.before-label {
+    left: 15px;
+}
+
+.after-label {
+    right: 15px;
+}
+
+.comparison-disclaimer {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+    .comparison-section h2 {
+        font-size: 28px;
+    }
+}
